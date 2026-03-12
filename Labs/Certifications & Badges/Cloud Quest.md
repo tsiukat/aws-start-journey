@@ -1,1 +1,1 @@
-
+[![AWS Cloud Practitioner](https://images.credly.com/size/110x110/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png)](https://www.credly.com/earner/earned/badge/6b41f9e1-cecd-47c4-adfa-7d9e528d7a47)
