@@ -69,28 +69,24 @@ Get hands-on experience with Amazon EC2: launch a web server on a cloud instance
 
 ### Task 3 — Security Group: Inbound Rule HTTP
 
-<!-- Add screenshot: HTTP port 80 inbound rule added -->
-![Inbound Rule HTTP](screenshots/task3-security-group-http.png)
+<img width="1889" height="496" alt="screenshots task3-Security Group Inbound Rule HTTP" src="https://github.com/user-attachments/assets/50d15bc1-2df7-4b57-bbba-063965a5702d" />
 
-<!-- Add screenshot: browser showing "Hello From Your Web Server!" -->
-![Web Server Response](screenshots/task3-web-server-hello.png)
+<img width="815" height="230" alt="screenshots task3-Security Group Inbound Rule HTTP1" src="https://github.com/user-attachments/assets/8504d9c0-7a5f-4be1-8fe5-690f69d73966" />
 
 ---
 
 ### Task 4 — Instance Type and EBS Volume Resize
 
-<!-- Add screenshot: instance type changed to t3.small -->
-![Change Instance Type](screenshots/task4-instance-type-change.png)
+<img width="1653" height="836" alt="screenshots task4-instance-type-change" src="https://github.com/user-attachments/assets/c75fd0b9-3c15-40d0-bfdf-cb5c449917a4" />
 
-<!-- Add screenshot: Modify Volume 8 GiB → 10 GiB -->
-![Resize EBS Volume](screenshots/task4-ebs-resize.png)
+<img width="1665" height="347" alt="screenshots task4-ebs-resize" src="https://github.com/user-attachments/assets/89c911c3-6816-4ba0-8a4e-47f62ee8fea1" />
 
 ---
 
 ### Task 5 — Termination Protection
 
-<!-- Add screenshot: error "Failed to terminate an instance" -->
-![Termination Error](screenshots/task5-termination-error.png)
+<img width="1670" height="821" alt="screenshots task5-termination-error" src="https://github.com/user-attachments/assets/79f37137-e92d-4827-add0-0200f1a1acb5" />
+
 
 ---
 
