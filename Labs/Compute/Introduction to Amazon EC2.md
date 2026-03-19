@@ -107,13 +107,11 @@ Get hands-on experience with Amazon EC2: launch a web server on a cloud instance
 
 ## My Reflection
 
-This lab gave me my first hands-on experience with EC2 — from launching an instance to terminating it. The most tangible lesson came in Task 3: the web server was already running, but completely unreachable until I added the HTTP inbound rule. That is **default deny** in action — a core principle of cloud security that I now understand not just in theory, but from actually being locked out.
+This lab gave me my first hands-on experience with EC2 from launching an instance to terminating it. The most tangible lesson came in Task 3: the web server was already running, but completely unreachable until I added the HTTP inbound rule. That is **default deny** in action - a core principle of cloud security that I now understand not just in theory, but from actually being locked out.
 
-Resizing the instance required stopping it first, which makes sense architecturally — instance type is tied to the underlying physical host. In a real-world FinTech environment, this means any vertical scaling requires planning a maintenance window, which has direct implications for SLA commitments.
+Resizing the instance required stopping it first, which makes sense architecturally, instance type is tied to the underlying physical host. In a real-world FinTech environment, this means any vertical scaling requires planning a maintenance window, which has direct implications for SLA commitments.
 
-The **User Data script** was an elegant automation pattern: instead of manually configuring a server after launch, the instance configures itself on startup. This is the foundation of scalable, repeatable infrastructure — and a stepping stone toward understanding Auto Scaling Groups.
-
-Termination Protection felt like a small detail, but it carries real weight in production. Accidental deletion of a running instance can mean data loss, downtime, and incident response — a few clicks of configuration that cost nothing but prevent a lot.
+Termination Protection felt like a small detail, but it carries real weight in production. Accidental deletion of a running instance can mean data loss, downtime, and incident response, a few clicks of configuration that cost nothing but prevent a lot.
 
 > 💡 **Key Insight:** In cloud architecture, security, scalability, and reliability are not separate features — they are interconnected design decisions that need to be considered at the moment a resource is launched, not added as an afterthought.
 
