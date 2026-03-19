@@ -56,17 +56,20 @@ Get hands-on experience with Amazon EC2: launch a web server on a cloud instance
 ### Task 1 — EC2 Instance Running
 
 <!-- Add screenshot: instance state Running + 2/2 Status Checks passed -->
-![EC2 Instance Running](screenshots/task1-instance-running.png)
+![EC2 Instance Running](<img width="1647" height="186" alt="screenshots task1-instance-running" src="https://github.com/user-attachments/assets/2d7b2b65-8227-4765-b4d6-00b68e6a22f0" />
+)
 
 ---
 
 ### Task 2 — Monitoring and Status Checks
 
 <!-- Add screenshot: Status Checks tab -->
-![Status Checks](screenshots/task2-status-checks.png)
+![Status Checks](<img width="1267" height="57" alt="screenshots task2-status-checks" src="https://github.com/user-attachments/assets/0d4c250e-7127-4350-a71c-319ce32835c2" />
+)
 
 <!-- Add screenshot: Instance Screenshot from the console -->
-![Instance Screenshot](screenshots/task2-instance-screenshot.png)
+![Instance Screenshot](<img width="1628" height="519" alt="screenshots task2-instance-screenshot" src="https://github.com/user-attachments/assets/92f83d93-0f8c-4af0-aaff-ee16d7e6a3ab" />
+)
 
 ---
 
