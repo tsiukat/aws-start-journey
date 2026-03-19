@@ -3,7 +3,7 @@
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Amazon S3, IAM, AWS CLI, Static Website Hosting  
-> **Date:** <!-- add date -->
+> **Date:** <SUBMITTED: Mar 17, 2026 7:46pm>
 
 ---
 
