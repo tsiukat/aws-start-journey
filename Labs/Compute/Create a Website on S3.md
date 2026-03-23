@@ -66,49 +66,36 @@ Use the AWS CLI from an EC2 instance to create an S3 bucket, configure IAM permi
 
 ### Task 2 — AWS CLI Configured
 
-<!-- Add screenshot: terminal after running `aws configure` successfully -->
-![AWS CLI Configure](screenshots/task2-aws-configure.png)
+![Task 2](https://github.com/user-attachments/assets/92f91440-f582-4cc9-9e04-276ea6f288f1)
 
 ---
 
 ### Task 3 — S3 Bucket Created
 
-<!-- Add screenshot: JSON response with bucket Location after create-bucket command -->
-![S3 Bucket Created](screenshots/task3-bucket-created.png)
+<img width="1361" height="157" alt="Task 3" src="https://github.com/user-attachments/assets/68de50ab-6b35-4bfa-877b-e4908f58ce0e" />
 
 ---
 
 ### Task 4 — IAM User and Policy Attached
 
-<!-- Add screenshot: terminal output of aws iam create-user and attach-user-policy -->
-![IAM User Created](screenshots/task4-iam-user-policy.png)
+<img width="1360" height="689" alt="Task 4 awsS3user" src="https://github.com/user-attachments/assets/c5cf1b75-d59c-46d4-88bd-23e7bc11d53f" />
+
+<img width="1366" height="728" alt="Task 4 awsS3user -permision" src="https://github.com/user-attachments/assets/d23f02ef-85ae-4849-b555-d85ad8fc2b28" />
+
 
 ---
 
 ### Task 5 — Bucket Permissions Updated
 
-<!-- Add screenshot: S3 console showing Block Public Access disabled + ACLs enabled -->
-![Bucket Permissions](screenshots/task5-bucket-permissions.png)
+<img width="1366" height="728" alt="Task 7 Upload files to Amazon S3 by using the AWS CLI" src="https://github.com/user-attachments/assets/2ac92e59-497c-4432-9854-66efb4fae40c" />
 
 ---
 
-### Task 7 — Website Live in Browser
+### Task 7 — Website Live in Browser & Updated Website After Script Run
 
-<!-- Add screenshot: Café & Bakery static website open via S3 endpoint URL -->
-![Website Live](screenshots/task7-website-live.png)
+<img width="1366" height="728" alt="Task 7 Upload files to Amazon S3" src="https://github.com/user-attachments/assets/3eb123f7-f2dc-45a3-a126-43382e00b4a2" />
 
-<!-- Add screenshot: S3 console Properties tab showing Static website hosting: Enabled -->
-![Static Hosting Enabled](screenshots/task7-static-hosting-enabled.png)
-
----
-
-### Task 8 — Updated Website After Script Run
-
-<!-- Add screenshot: updated Café & Bakery page with new background colors -->
-![Website Updated](screenshots/task8-website-updated.png)
-
-<!-- Add screenshot: terminal showing update-website.sh execution output -->
-![Script Output](screenshots/task8-script-output.png)
+<img width="656" height="611" alt="website updated" src="https://github.com/user-attachments/assets/de821492-fb79-4c31-9340-a0ff74364afb" />
 
 ---
 
