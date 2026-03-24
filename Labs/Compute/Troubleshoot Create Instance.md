@@ -4,7 +4,7 @@
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** EC2 CLI Launch, LAMP Stack, Troubleshooting  
 > **Date:** <!-- add date -->
-
+ 
 ---
 
 ## Lab Objective
