@@ -52,46 +52,24 @@ The instance launched successfully and received a public IP, but the web app did
 
 ## Screenshots
 
-### Script Running — Instance Launched Successfully
+### Script Running — Instance Launched Successfully & AMI Not Found Error
 
-<!-- Add screenshot: terminal output after script completes with public IP assigned -->
-![Script Success](screenshots/task3-script-success.png)
+<img width="1920" height="1040" alt="task4 Instance Launched  Error AMIID" src="https://github.com/user-attachments/assets/54bc2a98-73a8-4e2e-bdb1-9e0df2744cb6" />
 
----
-
-### Issue #1 — AMI Not Found Error
-
-<!-- Add screenshot: terminal error "InvalidAMIID.NotFound" -->
-![AMI Error](screenshots/task3-issue1-ami-error.png)
 
 ---
 
-### Issue #2 — nmap Scan Showing Port 80 Closed
 
-<!-- Add screenshot: nmap output before security group fix -->
-![nmap Scan](screenshots/task3-issue2-nmap.png)
+### Region Change
 
----
-
-### Security Group Fixed — Port 80 Open
-
-<!-- Add screenshot: inbound rules updated with HTTP port 80 -->
-![SG Fixed](screenshots/task3-issue2-sg-fixed.png)
-
----
-
-### Café Web Application Live
-
-<!-- Add screenshot: Café home page loaded in browser -->
-![Cafe App](screenshots/task4-cafe-home.png)
+<img width="1920" height="1040" alt="task4 error scrypt" src="https://github.com/user-attachments/assets/1a1093ec-2de8-408f-b701-c08e852d8c73" />
+<img width="1920" height="1040" alt="task4 error scrypt - added" src="https://github.com/user-attachments/assets/9529f7e7-796d-4f17-bd4d-e4c3ed23ba7b" />
 
 ---
 
 ### Order Placed and History Confirmed
 
-<!-- Add screenshot: Order History page showing submitted orders -->
-![Order History](screenshots/task4-order-history.png)
-
+<img width="1920" height="1040" alt="task4 order confirmation" src="https://github.com/user-attachments/assets/569a24ef-458b-4ff1-9ae8-d9168d7a53c1" />
 ---
 
 ## Key Takeaways
