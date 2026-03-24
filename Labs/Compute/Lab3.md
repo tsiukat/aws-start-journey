@@ -41,43 +41,24 @@ From the bastion host terminal, ran a sequence of CLI commands to programmatical
 
 ### Bastion Host — Running in EC2 Console
 
-<!-- Add screenshot: Bastion host instance in Running state -->
-![Bastion Host Running](screenshots/task1-bastion-running.png)
+<img width="1920" height="1040" alt="task1-bastion-running" src="https://github.com/user-attachments/assets/bff56eeb-bfce-44ae-b78d-d89ece93d474" />
 
 ---
 
 ### EC2 Instance Connect — Terminal Session
 
-<!-- Add screenshot: browser-based terminal connected to bastion host -->
-![EC2 Instance Connect](screenshots/task2-instance-connect.png)
+<img width="1920" height="1040" alt="task2-instance-connect-1" src="https://github.com/user-attachments/assets/84f4abb2-2a7f-4b6d-91c7-f1ce5b5ab306" />
 
----
-
-### CLI — AMI, Subnet, and Security Group Retrieved
-
-<!-- Add screenshot: terminal showing echo $AMI, $SUBNET, $SG values -->
-![CLI Variables](screenshots/task3-cli-variables.png)
-
----
 
 ### CLI — Web Server Instance Launched
 
-<!-- Add screenshot: terminal output of run-instances command with instance ID -->
-![Web Server Launched](screenshots/task3-web-server-launched.png)
-
----
-
-### Web Server — App Accessible in Browser
-
-<!-- Add screenshot: web application loaded via public DNS name -->
-![Web App Live](screenshots/task3-web-app-live.png)
+<img width="1920" height="1040" alt="task2-instance-connect-2" src="https://github.com/user-attachments/assets/065286b1-7f30-40e8-92a2-9526efe69e3c" />
 
 ---
 
 ### Both Instances Visible in EC2 Console
 
-<!-- Add screenshot: EC2 Instances list showing both Bastion host and Web Server -->
-![Both Instances](screenshots/task3-both-instances.png)
+<img width="1920" height="1040" alt="task3-both-instances" src="https://github.com/user-attachments/assets/20beaed5-4792-4f17-96ef-76b74ccf303e" />
 
 ---
 
