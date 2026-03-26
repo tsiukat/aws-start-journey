@@ -47,42 +47,30 @@ Automate EBS snapshot management using the AWS CLI and cron, then sync files fro
 
 ### Snapshot Created — Initial
 
-<!-- Add screenshot: terminal output of aws ec2 create-snapshot with SnapshotId returned -->
-![Snapshot Created](screenshots/task2-snapshot-created.png)
+<img width="1920" height="1040" alt="task2-snapshot-created" src="https://github.com/user-attachments/assets/cb96626d-da5f-422b-bade-a259fea9a40c" />
 
 ---
 
 ### Cron Job Running — Multiple Snapshots Generated
 
-<!-- Add screenshot: aws ec2 describe-snapshots output showing multiple snapshots -->
-![Multiple Snapshots](screenshots/task2-cron-snapshots.png)
+<img width="1920" height="1040" alt="task2-cron-snapshots" src="https://github.com/user-attachments/assets/12801fec-2e10-4788-abfb-6c0958ecc174" />
+<img width="1920" height="1040" alt="task2-cron-snapshots-1" src="https://github.com/user-attachments/assets/11793992-83b7-4bee-a538-f3e8dac7382b" />
+
 
 ---
 
 ### Snapshotter Script — Cleanup Result
 
-<!-- Add screenshot: terminal output of snapshotter_v2.py showing deleted snapshots -->
-![Snapshot Cleanup](screenshots/task2-snapshotter-cleanup.png)
-
-<!-- Add screenshot: describe-snapshots output showing only 2 snapshots remain -->
-![Two Snapshots Remain](screenshots/task2-two-snapshots.png)
-
----
-
-### S3 Sync — Files Uploaded
-
-<!-- Add screenshot: terminal output of aws s3 sync showing 3 files uploaded -->
-![S3 Sync Upload](screenshots/task3-s3-sync-upload.png)
+<img width="1920" height="1040" alt="task2-snapshotter-cleanup" src="https://github.com/user-attachments/assets/80ffbd4f-4914-4d70-8631-fc81bbb30bf6" />
+<img width="1920" height="1040" alt="task2-two-snapshots" src="https://github.com/user-attachments/assets/7362fea8-b560-4c86-995f-01d14c0679d5" />
 
 ---
 
 ### File Deleted and Recovered via Versioning
 
-<!-- Add screenshot: aws s3 ls showing file1.txt missing after --delete sync -->
-![File Deleted](screenshots/task3-file-deleted.png)
+<img width="1920" height="1040" alt="task3-file-deleted" src="https://github.com/user-attachments/assets/bf94e16b-7e36-426a-81b2-8e8e44b4e98c" />
+<img width="1920" height="1040" alt="task3-file-restored" src="https://github.com/user-attachments/assets/c6d42254-9064-4968-863c-a38e2859540c" />
 
-<!-- Add screenshot: terminal showing file1.txt restored and re-synced to S3 -->
-![File Restored](screenshots/task3-file-restored.png)
 
 ---
 
