@@ -41,30 +41,24 @@ Create and manage an Amazon EBS volume: attach it to an EC2 instance, configure 
 ## Screenshots
 
 ### EBS Volume Created and Attached
-
-<!-- Add screenshot: Volumes list showing My Volume in "In-use" state -->
-![Volume Attached](screenshots/task2-volume-attached.png)
+<img width="1920" height="1040" alt="volume-attached" src="https://github.com/user-attachments/assets/e4003c75-caa9-4a78-9ad4-0cce6ab6f801" />
 
 ---
 
 ### File System Mounted — df -h Output
+<img width="1920" height="1040" alt="Mounted — df -h Output" src="https://github.com/user-attachments/assets/3b4ef10e-9dff-424e-bec5-2bd36a0d34ac" />
 
-<!-- Add screenshot: terminal showing /dev/nvme1n1 mounted at /mnt/data-store -->
-![Volume Mounted](screenshots/task4-volume-mounted.png)
 
 ---
 
 ### Snapshot Created
-
-<!-- Add screenshot: Snapshots list showing My Snapshot with status "Completed" -->
-![Snapshot Created](screenshots/task5-snapshot-completed.png)
+<img width="1920" height="1040" alt="snapshot-completed" src="https://github.com/user-attachments/assets/566cce9b-250a-4018-9619-cd5a14c1b429" />
 
 ---
 
 ### File Restored from Snapshot
-
-<!-- Add screenshot: terminal output of `ls /mnt/data-store2/file.txt` showing the file exists -->
-![File Restored](screenshots/task6-file-restored.png)
+<img width="1920" height="1040" alt="file-restored" src="https://github.com/user-attachments/assets/41809587-840b-4c8f-958e-463ce90676d4" />
+<img width="1920" height="1040" alt="restored volume" src="https://github.com/user-attachments/assets/306c5b63-3c82-4a66-9564-4675776f97e7" />
 
 ---
 
