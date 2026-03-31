@@ -44,44 +44,37 @@ Configure a secure S3 bucket for file sharing with an external user (`mediacouse
 ## Screenshots
 
 ### S3 Bucket Created and Images Synced
-
-<!-- Add screenshot: terminal output of aws s3 sync showing uploaded files -->
-![S3 Sync](screenshots/task2-s3-sync.png)
+<img width="1920" height="1040" alt="task2-s3-sync" src="https://github.com/user-attachments/assets/ec05e5d4-b496-4b1f-8be4-06e00aee2189" />
+<img width="1920" height="1040" alt="task2-s3-sync-1" src="https://github.com/user-attachments/assets/30d32af6-58a4-4082-92d9-679bd159e9e9" />
+<img width="1366" height="728" alt="task3 upload succs" src="https://github.com/user-attachments/assets/3322cd05-dbcd-4fd7-9fcc-525c5df900ce" />
+<img width="1920" height="1040" alt="task3 delete" src="https://github.com/user-attachments/assets/94a35360-2137-4d79-927a-7e6210566378" />
 
 ---
 
 ### mediacouser — Permission Denied on Bucket Settings
-
-<!-- Add screenshot: S3 console Permissions tab showing "Insufficient permissions" for mediacouser -->
-![Access Denied](screenshots/task3-insufficient-permissions.png)
+<img width="1920" height="1040" alt="task3 no permissions" src="https://github.com/user-attachments/assets/cfd4b2f4-402a-49cd-a46b-20741cff9a64" />
+<img width="1920" height="1040" alt="task3 no permissions-1" src="https://github.com/user-attachments/assets/b433016d-ae43-44f9-9438-d1c30c57939f" />
 
 ---
 
 ### SNS Topic Created and Subscription Confirmed
-
-<!-- Add screenshot: s3NotificationTopic page in SNS console with subscription Confirmed -->
-![SNS Subscription](screenshots/task4-sns-subscription.png)
+<img width="1920" height="1040" alt="task4 subscription confirmed" src="https://github.com/user-attachments/assets/ee798b78-fb2c-4ef2-b82c-50f7237975a0" />
 
 ---
 
 ### SNS Email — ObjectCreated Notification
-
-<!-- Add screenshot: email notification showing eventName: ObjectCreated:Put -->
-![Email Created](screenshots/task5-email-object-created.png)
+<img width="1920" height="1040" alt="task5-email-object-created" src="https://github.com/user-attachments/assets/03c44094-f53a-4646-bc0b-7c773d558cf3" />
 
 ---
 
 ### SNS Email — ObjectRemoved Notification
+<img width="1920" height="1040" alt="task5-email-object-removed" src="https://github.com/user-attachments/assets/15dac785-dfbf-4cb1-98fd-b37496b4f633" />
 
-<!-- Add screenshot: email notification showing eventName: ObjectRemoved:Delete -->
-![Email Deleted](screenshots/task5-email-object-removed.png)
 
 ---
 
 ### Unauthorized ACL Change — AccessDenied
-
-<!-- Add screenshot: terminal showing AccessDenied error on put-object-acl command -->
-![AccessDenied](screenshots/task5-access-denied.png)
+<img width="1920" height="1040" alt="task5-access-denied" src="https://github.com/user-attachments/assets/b37b55d3-3be6-4443-a92c-83d540375d88" />
 
 ---
 
