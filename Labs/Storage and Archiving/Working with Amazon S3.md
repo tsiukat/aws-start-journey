@@ -1,5 +1,5 @@
 
-# Lab 07 — Working with Amazon S3: Permissions, Sharing & Event Notifications
+# Lab 182 — Working with Amazon S3: Permissions, Sharing & Event Notifications
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** S3 Bucket Policies, IAM User Permissions, SNS Notifications  
