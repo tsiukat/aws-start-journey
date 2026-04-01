@@ -20,10 +20,10 @@ Independent challenge — create an S3 bucket, upload an object, configure publi
 - Ran `aws configure` with lab credentials (AccessKey, SecretKey, region `us-west-2`)
 
 ### ✅ Created an S3 Bucket
-- Created a uniquely named S3 bucket via AWS Console or CLI
+- Created a **tsiukat-bucket** named S3 bucket via AWS Console or CLI
 
 ### ✅ Uploaded an Object
-- Uploaded an image or file into the bucket
+- Uploaded a file into the bucket
 
 ### ✅ Attempted Public Access — Blocked by Default
 - Tried to open the object URL in a browser → access denied
@@ -35,44 +35,30 @@ Independent challenge — create an S3 bucket, upload an object, configure publi
 - Verified the object loads successfully in the browser
 
 ### ✅ Listed Bucket Contents via AWS CLI
-- Ran `aws s3 ls s3://<bucket-name>/` to confirm objects are present
+- Ran `aws s3 ls s3://tsiukat-bucket/` to confirm objects are present
 
 ---
 
 ## Screenshots
 
-### Bucket Created
+### Bucket Created & File Uploaded
+<img width="1920" height="1040" alt="S3 creation and file" src="https://github.com/user-attachments/assets/632c15e9-5be7-40a8-8f62-9c06b14e1a49" />
 
-<!-- Add screenshot: S3 console showing the new bucket in the list -->
-![Bucket Created](screenshots/bucket-created.png)
-
----
-
-### Object Uploaded
-
-<!-- Add screenshot: bucket contents showing the uploaded file -->
-![Object Uploaded](screenshots/object-uploaded.png)
 
 ---
-
 ### Access Denied — Before Permissions Fix
-
-<!-- Add screenshot: browser showing Access Denied on the object URL -->
-![Access Denied](screenshots/access-denied.png)
+<img width="1920" height="1040" alt="Access denied" src="https://github.com/user-attachments/assets/60857c33-3ffb-4c77-8a70-15545803292a" />
 
 ---
 
 ### Object Accessible in Browser — After Fix
-
-<!-- Add screenshot: browser successfully loading the uploaded object -->
-![Object Public](screenshots/object-public.png)
+<img width="1920" height="1040" alt="accessed" src="https://github.com/user-attachments/assets/fe3127f0-fdf7-4874-8e4d-b57db0497233" />
 
 ---
 
 ### AWS CLI — Bucket Contents Listed
+<img width="1920" height="1040" alt="acl and ls" src="https://github.com/user-attachments/assets/4307c1f6-b627-4374-8fc2-f21ac46de72b" />
 
-<!-- Add screenshot: terminal output of `aws s3 ls s3://<bucket>/` -->
-![CLI List](screenshots/cli-bucket-list.png)
 
 ---
 
