@@ -86,16 +86,16 @@ SNS Topic → Email to administrator
 ---
 
 ### Task 5 — Sales Report Email Received
-
-<!-- Add screenshot: email inbox showing "Daily Sales Analysis Report" with order data -->
-![Report Email](screenshots/task5-report-email.png)
+<img width="1920" height="1040" alt="Sales Report Email Received - confirmation" src="https://github.com/user-attachments/assets/b857b94c-0cc5-4b37-8168-cb5aaf0d84d0" />
+<img width="1920" height="1040" alt="Sales Report Email Received - email" src="https://github.com/user-attachments/assets/3c6892a3-ce41-4ee4-b2ad-071a8735ed34" />
 
 ---
 
 ### Task 5 — CloudWatch Events Trigger Configured
+<img width="1920" height="1040" alt="Trigger" src="https://github.com/user-attachments/assets/4ce4fcc1-5ec5-40cf-9c05-1f843c20a3f8" />
+Triggered on Time
+<img width="1920" height="1040" alt="Triggered on time" src="https://github.com/user-attachments/assets/263067c6-6c60-47e9-8e91-513bb6a700df" />
 
-<!-- Add screenshot: Function overview showing EventBridge trigger attached -->
-![CloudWatch Trigger](screenshots/task5-cloudwatch-trigger.png)
 
 ---
 
