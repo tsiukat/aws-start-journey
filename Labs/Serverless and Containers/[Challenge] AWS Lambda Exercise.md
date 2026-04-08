@@ -1,4 +1,4 @@
-# Challenge Lab — AWS Lambda: Word Count Function
+# 177-[JAWS]-Lab - [Challenge] AWS Lambda Exercise
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Lambda, S3 Trigger, SNS Notification, IAM Role  
