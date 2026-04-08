@@ -1,4 +1,4 @@
-# Lab 09 — Working with AWS Lambda
+# 178-[JAWS]-Activity - Working with AWS Lambda
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Serverless Computing, Lambda Functions, SNS, CloudWatch Events  
