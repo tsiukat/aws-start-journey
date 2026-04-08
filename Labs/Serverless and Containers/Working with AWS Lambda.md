@@ -66,23 +66,18 @@ SNS Topic → Email to administrator
 ## Screenshots
 
 ### Lambda Layer Created
-
-<!-- Add screenshot: pymysqlLibrary layer page showing "Successfully created layer" -->
-![Lambda Layer](screenshots/task2-lambda-layer.png)
+<img width="1920" height="1040" alt="task2-lambda-layer" src="https://github.com/user-attachments/assets/a0ed17b0-c490-4721-af09-fba17b1cec42" />
 
 ---
 
 ### Task 3 — Timeout Error (Before Fix)
-
-<!-- Add screenshot: Execution result: failed — timeout error message -->
-![Timeout Error](screenshots/task3-timeout-error.png)
+<img width="1920" height="1040" alt="Test Failed" src="https://github.com/user-attachments/assets/6cf4fe75-3bc7-4486-8685-06e496dd68c9" />
 
 ---
 
 ### Task 3 — Security Group Fix (Port 3306 Added)
+<img width="1920" height="1040" alt="Test succeeded" src="https://github.com/user-attachments/assets/df82389b-0869-40cd-ad4e-abe37f7443cf" />
 
-<!-- Add screenshot: CafeSecurityGroup inbound rules showing TCP 3306 added -->
-![SG Fix](screenshots/task3-sg-port-3306.png)
 
 ---
 
