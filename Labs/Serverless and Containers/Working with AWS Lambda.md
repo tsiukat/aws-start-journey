@@ -78,13 +78,10 @@ SNS Topic → Email to administrator
 ### Task 3 — Security Group Fix (Port 3306 Added)
 <img width="1920" height="1040" alt="Test succeeded" src="https://github.com/user-attachments/assets/df82389b-0869-40cd-ad4e-abe37f7443cf" />
 
-
 ---
 
 ### Task 3 — Data Extractor Test Succeeded
-
-<!-- Add screenshot: Execution result: succeeded with order data in response body -->
-![Test Success](screenshots/task3-test-success.png)
+<img width="1920" height="1040" alt="task3-test-success" src="https://github.com/user-attachments/assets/8c40af1e-96a1-447f-8279-c4aed6425a66" />
 
 ---
 
