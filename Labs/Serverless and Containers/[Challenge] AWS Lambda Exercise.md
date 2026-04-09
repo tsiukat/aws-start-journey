@@ -32,7 +32,7 @@ SNS Topic → Email: "The word count in <filename> is nnn."
 - Copied the **Topic ARN** for use in the Lambda function
 
 ### ✅ Step 2 — Created the Lambda Function
-- Runtime: **Python 3.9**
+- Runtime: **Python 3.10**
 - Execution role: **LambdaAccessRole** (pre-created — grants S3, SNS, CloudWatch access)
 - Wrote Python code to:
   - Read the uploaded file from the S3 event object
@@ -89,16 +89,13 @@ def lambda_handler(event, context):
 ## Screenshots
 
 ### Lambda Function Created
+<img width="1920" height="1040" alt="Created the Lambda Function" src="https://github.com/user-attachments/assets/811302b8-5134-4d62-88cd-011895214767" />
 
-<!-- Add screenshot: Lambda console showing the wordCount function overview -->
-![Lambda Function](screenshots/lambda-function-overview.png)
 
 ---
 
 ### S3 Trigger Configured
-
-<!-- Add screenshot: Lambda function Triggers tab showing S3 bucket event trigger -->
-![S3 Trigger](screenshots/s3-trigger-configured.png)
+<img width="1920" height="1040" alt="Created an S3 Bucket and Configured the Trigger" src="https://github.com/user-attachments/assets/f1256c6f-5ba8-4358-8da0-23c2c8d1fc6b" />
 
 ---
 
