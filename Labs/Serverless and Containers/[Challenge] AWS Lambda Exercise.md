@@ -105,10 +105,9 @@ def lambda_handler(event, context):
 
 ---
 
-### CloudWatch Logs — Successful Execution
-
-<!-- Add screenshot: CloudWatch log stream showing Lambda executed without errors -->
-![CloudWatch Logs](screenshots/cloudwatch-logs.png)
+### CloudWatch Logs 
+<img width="1920" height="1040" alt="cloudWatch" src="https://github.com/user-attachments/assets/ca5d3626-a85d-421e-8458-89b1376236b5" />
+<img width="1920" height="1040" alt="cloudWatch-1" src="https://github.com/user-attachments/assets/6a583783-b3bd-455e-bc58-ea23a939372a" />
 
 ---
 
