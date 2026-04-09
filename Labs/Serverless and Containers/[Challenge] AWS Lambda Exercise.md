@@ -99,24 +99,9 @@ def lambda_handler(event, context):
 
 ---
 
-### SNS Topic and Subscription Confirmed
-
-<!-- Add screenshot: SNS topic with email subscription status "Confirmed" -->
-![SNS Confirmed](screenshots/sns-subscription-confirmed.png)
-
----
-
-### Test — File Uploaded to S3
-
-<!-- Add screenshot: S3 bucket showing uploaded .txt test file -->
-![File Uploaded](screenshots/s3-file-uploaded.png)
-
----
-
 ### Email Notification Received
+<img width="1920" height="1040" alt="Word COunt SNS email" src="https://github.com/user-attachments/assets/b093cca8-a7e8-46b3-b4f3-92665597c43a" />
 
-<!-- Add screenshot: email inbox showing "Word Count Result" with correct word count -->
-![Email Result](screenshots/email-word-count.png)
 
 ---
 
