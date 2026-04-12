@@ -307,6 +307,7 @@ The platform is expected to serve **millions of users globally** and must meet f
   </diagram>
 </mxfile>
 
+<img width="1391" height="1080" alt="3D E-Commerce Platform-Updated drawio (1)" src="https://github.com/user-attachments/assets/378d0282-2929-45a3-b9f6-39319a8f4cad" />
 
 
 ---
