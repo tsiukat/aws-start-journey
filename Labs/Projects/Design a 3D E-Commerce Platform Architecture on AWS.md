@@ -1,158 +1,140 @@
+# Lab Project — 3D E-Commerce Platform Architecture on AWS
 
-# ☁️ AWS Cloud Architecture — 3D E-Commerce Platform
-
-**AWS Cloud Practitioner Study Project · Team Assignment**  
-Designed as part of the AWS re/Start / Cloud Practitioner preparation program.
+**AWS Cloud Practitioner Program · Architecture Design Assignment**
 
 ---
 
-## 📌 Project Overview
+## What This Project Is
 
-This project documents the design of a cloud architecture on AWS for a next-generation **3D e-commerce platform** — a web application where users can interact with 3D models of products (furniture, gadgets, fashion) before purchasing.
+This lab documents the cloud architecture design for a next-generation **3D e-commerce platform** — a web application where users can interact with 3D models of products (furniture, gadgets, fashion items) before purchasing.
 
-The platform is expected to serve **millions of users globally** and must be fast, always available, secure, and cost-efficient.
+The platform is expected to serve **millions of users globally** and must meet five key requirements: high availability, scalability, performance, security, and cost optimization.
 
-> **This is an architecture design project** — no code was written. The deliverable is a architecture diagram and a written explanation of service choices.
+> This is an architecture design project. The deliverable is a diagram and a written rationale — not code.
 
 ---
 
-## 🎯 Business Requirements
+## Architecture Diagram
 
-| Requirement | Description |
+![3D E-Commerce AWS Architecture](./screenshots/3D_E-Commerce_Platform.png)
+
+---
+
+## How the Architecture Works — Flow from User to Data
+
+The diagram is read **top to bottom**, following the path of a real user request.
+
+### 1. Users → Internet → Route 53
+
+A user opens the browser and types the site address. **Route 53** (AWS DNS service) translates the domain name into a server address and routes the user to the nearest AWS region. This is always the first element in any AWS architecture — without DNS, the browser has no idea where to go.
+
+### 2. Route 53 → CloudFront → S3
+
+**CloudFront** is a Content Delivery Network with 400+ edge locations worldwide. 3D model files are large — tens of megabytes. Instead of downloading them from one central server, CloudFront caches them at the edge location closest to the user (e.g. Frankfurt for Warsaw). **S3** stores the original 3D models, product images, and static files. CloudFront fetches from S3 and serves cached copies globally. This directly addresses the **Performance** requirement.
+
+### 3. CloudFront → AWS Shield + WAF
+
+All traffic passing through CloudFront is protected by two security layers:
+
+- **AWS Shield** — protects against DDoS attacks (floods of fake traffic designed to crash the system)
+- **WAF (Web Application Firewall)** — filters malicious requests before they reach the servers
+
+These sit at the edge — threats are blocked before they ever enter the internal network.
+
+### 4. Route 53 → ELB (one per VPC)
+
+Dynamic user actions — login, cart, checkout — go to the **Elastic Load Balancer**. The ELB distributes incoming requests evenly across EC2 instances so no single server gets overloaded. Two ELBs are deployed, one per VPC, supporting the multi-region design described below.
+
+### 5. ELB → VPC → EC2 + Auto Scaling
+
+The architecture uses **two separate VPCs**, each deployed in its own AWS Region.
+
+**Why two VPCs and two ELBs?**
+This design provides **geographic redundancy** — if an entire AWS region goes down, the second VPC in a different region continues serving users without interruption. This is a stronger form of resilience than a single-region Multi-AZ setup and directly satisfies the **High Availability** requirement at regional scale. Each VPC has its own ELB because each region operates as an independent, fully functional unit.
+
+Inside each VPC:
+
+- **Public subnet** — EC2 application servers with Auto Scaling. When traffic spikes, Auto Scaling launches additional instances automatically. When it drops, they shut down. This satisfies **Scalability** and **Cost Optimization**.
+- **Two Availability Zones** inside each VPC — an extra layer of redundancy within the region itself.
+
+### 6. EC2 → Aurora + DynamoDB (Private Subnets)
+
+Application servers write and read from two databases, both in **private subnets** — not reachable from the internet:
+
+- **Amazon Aurora (RDS)** — relational database for transactional data: customer accounts, orders, payment records. Chosen because orders require strict consistency — money cannot be charged without a confirmed order record.
+- **Amazon DynamoDB** — NoSQL database for the product catalog and user sessions. Delivers single-digit millisecond reads at any scale — essential when millions of users browse products simultaneously.
+
+Both databases are replicated across Availability Zones within each VPC.
+
+### 7. EC2 → Lambda
+
+**AWS Lambda** handles lightweight event-driven tasks: sending order confirmation emails, updating stock counts, notifying the warehouse. Lambda runs only when triggered and costs nothing when idle — a direct contribution to **Cost Optimization**.
+
+### 8. Security — AWS IAM + KMS
+
+Applied across the entire architecture:
+
+- **AWS IAM** — every service has a role with minimum required permissions. EC2 cannot access S3 arbitrarily. Lambda cannot read the database directly. Least-privilege access is enforced throughout.
+- **AWS Key Management Service (KMS)** — manages encryption keys for data at rest across S3, RDS, and DynamoDB.
+
+### 9. Monitoring — CloudWatch + Trusted Advisor
+
+- **Amazon CloudWatch** — monitors CPU usage, error rates, database response times, and Lambda execution across both VPCs. Triggers alarms when metrics exceed thresholds.
+- **AWS Trusted Advisor** — runs daily checks for cost inefficiencies, idle resources, and security gaps. Ensures the platform stays lean and secure over time.
+
+---
+
+## How the Architecture Meets Each Requirement
+
+| Requirement | How it is addressed |
 |---|---|
-| **High Availability** | Platform available 24/7 with fault tolerance and automatic failover |
-| **Scalability** | Handles unpredictable traffic spikes without manual intervention |
-| **Performance** | Fast 3D content delivery, quick page loads, smooth rendering |
-| **Security** | AWS security best practices: IAM, VPC, encryption, HTTPS |
-| **Cost Optimization** | No over-provisioning; pay-as-you-go where possible |
+| **High Availability** | Two separate VPCs in two AWS Regions. If one region fails, the second continues. Two Availability Zones per VPC add a second redundancy layer. |
+| **Scalability** | EC2 Auto Scaling in both VPCs. DynamoDB scales automatically. No manual action needed during traffic spikes. |
+| **Performance** | CloudFront serves 3D assets from the edge location nearest to each user. DynamoDB delivers millisecond reads for the product catalog. |
+| **Security** | WAF and Shield at the edge. Private subnets for all databases. IAM least-privilege roles. KMS encryption at rest. HTTPS via CloudFront. |
+| **Cost Optimization** | Auto Scaling prevents over-provisioning. Lambda eliminates idle servers for background tasks. Trusted Advisor identifies unused resources. |
 
 ---
 
-## 🏗️ Architecture Diagram
+## Design Decisions and Trade-offs
 
-> **Screenshot placeholder — paste your diagram here**
+**Two VPCs instead of one Multi-AZ VPC**
+The architecture uses two fully separate VPCs across two AWS Regions rather than a single VPC with two Availability Zones. This provides regional-level fault tolerance — protection against a full region outage, not just a single data center failure. The trade-off is higher operational complexity and cost. For a global platform serving millions of users, this is a justified design choice.
 
-![AWS Architecture Diagram](./screenshots/architecture-diagram.png)
+**Two databases instead of one**
+Aurora handles transactional data where accuracy is critical. DynamoDB handles high-volume reads where speed matters more than relational structure. Using both means each database does exactly what it is built for.
 
-*The diagram shows the full request flow: Users → Route 53 → CloudFront → ALB → EC2 (Multi-AZ) → RDS / DynamoDB, with S3 as asset storage and CloudWatch + Trusted Advisor for monitoring.*
-
----
-
-## 🧩 AWS Services Used
-
-### 🌐 Networking & Routing
-
-**Route 53**  
-DNS service. Translates the domain name into the correct server address. Configured with latency-based routing so users are automatically directed to the nearest AWS region.
-
-**Amazon CloudFront (CDN)**  
-Content Delivery Network. Caches and delivers 3D model files (GLB/GLTF), textures, and static assets from 400+ edge locations worldwide. This is the most impactful service for performance — users receive assets from the location closest to them, not from a central server.
-
-### 📦 Storage
-
-**Amazon S3**  
-Object storage for all static assets: 3D models, product images, and front-end files. Integrated with CloudFront as the origin. S3 Lifecycle policies automatically move older assets to cheaper storage tiers (S3-IA → Glacier) to control costs.
-
-### ⚖️ Traffic Distribution
-
-**Elastic Load Balancer (ALB)**  
-Distributes incoming HTTPS traffic evenly across EC2 instances. Performs health checks — if a server goes down, traffic is automatically rerouted. The only entry point from the internet into the VPC.
-
-### 💻 Compute
-
-**Amazon EC2 with Auto Scaling**  
-Application servers running in two Availability Zones (Multi-AZ). Auto Scaling launches new instances when CPU usage is high and terminates them when traffic drops — ensuring performance under load without over-provisioning.
-
-**AWS Lambda**  
-Serverless compute for event-driven tasks: order confirmation emails, thumbnail generation for new 3D uploads, background notifications. Billed per execution — no idle cost.
-
-### 🗄️ Databases
-
-**Amazon RDS Aurora (Multi-AZ)**  
-Relational database for structured transactional data: customer accounts, orders, payment records. Multi-AZ deployment means automatic failover to a standby replica if the primary database fails.
-
-**Amazon DynamoDB**  
-NoSQL database for the product catalog and user sessions. Delivers single-digit millisecond read performance at any scale — essential for a platform with millions of concurrent browsers.
-
-### 🔐 Security
-
-**AWS IAM**  
-Identity and Access Management. Every service has a role with least-privilege permissions — EC2 can only access what it needs, Lambda only what it needs. No shared credentials.
-
-**VPC with Public and Private Subnets**  
-EC2 instances and RDS databases live in private subnets with no direct internet access. Only the ALB sits in the public subnet. Security Groups act as firewalls between layers.
-
-**ACM (SSL/TLS Certificates)**  
-HTTPS enforced at CloudFront and ALB. All data in transit is encrypted.
-
-### 📊 Monitoring & Cost Control
-
-**Amazon CloudWatch**  
-Collects metrics, logs, and alarms across all services. Alerts trigger automatically on CPU spikes, error rate increases, or database connection limits.
-
-**AWS Trusted Advisor**  
-Continuously scans the account for cost inefficiencies, security gaps (open ports, unused IAM keys), and performance risks. Provides actionable recommendations without manual audits.
+**Lambda alongside EC2**
+EC2 runs the core application logic continuously. Lambda handles infrequent event-triggered tasks. Running those tasks on EC2 would mean paying for a server that sits idle most of the time.
 
 ---
 
-## 📐 Architecture Decisions & Trade-offs
+## Screenshot
 
-| Decision | Choice | Why |
-|---|---|---|
-| Compute layer | EC2 + Auto Scaling | More control than fully serverless; suitable for persistent app logic |
-| Background tasks | Lambda | Serverless = no idle cost for infrequent jobs |
-| Relational data | RDS Aurora Multi-AZ | ACID compliance for orders and payments |
-| Product catalog | DynamoDB | High-speed reads at scale; no joins needed |
-| Asset delivery | S3 + CloudFront | Large 3D files need edge caching; S3 alone would be slow globally |
-| Network isolation | VPC with private subnets | Databases and app servers not exposed to the internet |
+> To add your diagram: in draw.io go to File → Export as → PNG → name the file `3D_E-Commerce_Platform.png` → upload it to the `screenshots/` folder in this repository.
 
 ---
 
-## 📸 Screenshots
+## My Reflection — What I Learned
 
-> Replace placeholders with your actual screenshots from the assignment.
+Before this project, AWS felt like a long and disconnected list of service names. Designing this architecture from scratch changed that completely.
 
-### Architecture Diagram (draw.io / Lucidchart)
+The most important thing I learned is that **architecture is not a list of services — it is the story of a user's journey**. Once I traced what actually happens when someone opens a website and clicks on a 3D model, every service stopped being an abstract name and became a logical answer to a specific problem. CloudFront exists because 3D files are heavy and users are everywhere. Two Availability Zones exist because a single data center can lose power. Lambda exists because not every task needs a server running around the clock.
 
-![Architecture Diagram](./screenshots/architecture-diagram.png)
+I also learned the difference between **availability and scalability** — two words I used interchangeably before. Availability is about staying online when something breaks. Scalability is about handling more load when more people arrive. They are solved by different services and different design decisions.
 
----
+Designing the security layer taught me that **security is not one decision — it is many layers**. WAF blocks bad traffic at the edge. Private subnets hide the servers from the internet. IAM limits what each service can do internally. KMS encrypts the data itself. Each layer catches what the previous one might miss.
 
-## 📄 Written Explanation Document
+Finally, I understood that **cost optimization is a design decision, not something you fix after launch**. Choosing Lambda over EC2 for background tasks, using Auto Scaling instead of fixed capacity, storing assets in S3 — these choices directly affect the monthly bill and are made at the architecture stage, before a single server is turned on.
 
-The full 2-page written explanation (service choices, how requirements are met, trade-offs) is available in this repository:
-
-📎 [`AWS_Architecture_Explanation.docx`](./AWS_Architecture_Explanation.docx)
+This was my first time thinking like an architect rather than a user. I now look at every website differently.
 
 ---
 
-## 💡 My Reflection — What I Learned
+## Tools Used
 
-Working on this project gave me a much clearer picture of how cloud infrastructure actually fits together. Before this, AWS felt like a long list of service names. After designing this architecture, I started to see the *logic* behind the choices — why you don't just pick one database, why two Availability Zones matter, why CloudFront is not optional for global users.
+- [draw.io](https://app.diagrams.net/) — architecture diagram with built-in AWS icon library
 
-A few specific things that clicked for me:
+## Program
 
-**The difference between availability and scalability.** I used to think they were the same thing. Now I understand: availability is about staying online when something breaks (Multi-AZ, failover), while scalability is about handling more traffic when it arrives (Auto Scaling, DynamoDB). You need both, but they solve different problems.
-
-**Why "serverless" doesn't mean "no servers."** Lambda still runs on servers — I just don't manage them. The insight is in the billing model: I pay only when the function actually runs. For tasks that happen 50 times a day (like sending an email), running a dedicated EC2 server for that would be wasteful.
-
-**Security is not one thing — it's layers.** I learned to think in layers: network layer (VPC, subnets, security groups), identity layer (IAM roles), encryption layer (HTTPS, SSE), and monitoring layer (CloudWatch). Each layer catches what the previous one might miss.
-
-**Cost optimization is a design decision, not an afterthought.** Choosing Lambda over EC2 for some tasks, using S3 Lifecycle policies, relying on Auto Scaling instead of running peak-capacity servers constantly — these decisions save money by design, not by accident.
-
-This project was my first time thinking like an architect rather than a user. It changed how I see every website I visit — I now wonder: what's behind it?
-
----
-
-## 👥 Team
-
-5-person team project · AWS Cloud Practitioner Program
-
----
-
-## 📚 Resources
-
-- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
-- [AWS Architecture Center](https://aws.amazon.com/architecture/)
-- [AWS Free Tier](https://aws.amazon.com/free/)
-- [draw.io (diagram tool)](https://app.diagrams.net/)
+AWS Cloud Practitioner preparation · Bring Women Back to Work · Salesforce Switzerland
