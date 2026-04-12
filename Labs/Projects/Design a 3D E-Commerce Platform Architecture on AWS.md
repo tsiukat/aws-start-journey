@@ -401,13 +401,7 @@ EC2 runs the core application logic continuously. Lambda handles infrequent even
 
 ---
 
-## Screenshot
-
-> To add your diagram: in draw.io go to File → Export as → PNG → name the file `3D_E-Commerce_Platform.png` → upload it to the `screenshots/` folder in this repository.
-
----
-
-## My Reflection — What I Learned
+## What I Learned
 
 Before this project, AWS felt like a long and disconnected list of service names. Designing this architecture from scratch changed that completely.
 
