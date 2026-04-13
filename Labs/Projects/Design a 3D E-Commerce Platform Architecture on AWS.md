@@ -10,7 +10,7 @@ This lab documents the cloud architecture design for a next-generation **3D e-co
 
 The platform is expected to serve **millions of users globally** and must meet five key requirements: high availability, scalability, performance, security, and cost optimization.
 
-> This is an architecture design project. The deliverable is a diagram and a written rationale - not code.
+
 
 ---
 
