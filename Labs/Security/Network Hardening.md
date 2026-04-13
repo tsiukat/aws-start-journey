@@ -39,36 +39,20 @@ Activate Amazon Inspector to automatically scan Lambda functions for known vulne
 
 ### Inspector Dashboard — Lambda Coverage 100%
 
-<!-- Add screenshot: Inspector dashboard showing Lambda functions coverage at 100% -->
-![Inspector Dashboard](screenshots/task1-inspector-dashboard.png)
+<img width="1920" height="1040" alt="Inspector Dashboard — Lambda Coverage 100%" src="https://github.com/user-attachments/assets/a689d2f2-9865-4a18-b051-5830dd91b9b1" />
 
 ---
 
-### All Findings — CVE List
+### All Findings — CVE List & CVE-2023-32681 Detail Panel
 
-<!-- Add screenshot: Findings page showing 3 Medium severity findings -->
-![CVE Findings](screenshots/task2-all-findings.png)
+<img width="1920" height="1040" alt="All Findings — CVE List" src="https://github.com/user-attachments/assets/6c6598eb-7c2f-4fbe-998d-14b539f2002f" />
 
----
-
-### CVE-2023-32681 Detail Panel
-
-<!-- Add screenshot: finding detail pane showing vulnerability info and remediation recommendation -->
-![CVE Detail](screenshots/task2-cve-detail.png)
-
----
-
-### requirements.txt — Before and After Fix
-
-<!-- Add screenshot: Lambda code editor showing requirements.txt with "requests" (no version) -->
-![Requirements Fixed](screenshots/task3-requirements-fixed.png)
 
 ---
 
 ### Finding Status — Closed After Remediation
 
-<!-- Add screenshot: Inspector findings filtered to "Closed" showing CVE-2023-32681 resolved -->
-![Finding Closed](screenshots/task3-finding-closed.png)
+<img width="1920" height="1040" alt="Finding Status — Closed After Remediation" src="https://github.com/user-attachments/assets/7c398e56-2c70-4d91-bb98-601788bf8b55" />
 
 ---
 
