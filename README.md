@@ -1,10 +1,8 @@
-# aws-start-journey
-My way with AWS
 <div align="center">
 
-# ☁️ AWS Cloud Start — 12-Week Learning Program
+# ☁️ AWS Cloud Practitioner — My Learning Journey
 
-**From Business Analyst to Cloud-Fluent Professional**
+**From Communications Leader to Cloud-Fluent Professional**
 
 [![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
 [![Status](https://img.shields.io/badge/Status-In_Progress-blue?style=for-the-badge)](https://aws.amazon.com/certification/certified-cloud-practitioner/)
@@ -20,141 +18,57 @@ My way with AWS
 
 ## 👩‍💻 About Me & This Repository
 
-Hi! I'm **Kateryna**, a Business Analyst based in **Kraków, Poland** with hands-on experience in Salesforce, Workday, and IT project delivery. This repository documents my **12-week self-directed journey** into AWS Cloud — every week of study, every concept broken down, and every exam question I got wrong (and then got right).
+Hi! I'm **Kateryna**, a communications and change management professional based in **Kraków, Poland**, with **10+ years of experience** in multinational organizations — including Coca-Cola, British American Tobacco, and Astound Commerce.
 
-My goal: earn the **AWS Certified Cloud Practitioner (CLF-C02)** certification and bridge the gap between business analysis and cloud architecture.
+My career has been built on translating complex information into clear messages, aligning stakeholders across cultures and hierarchies, and driving change through structure and trust. Now I'm bringing that same mindset to cloud technology.
+
+This repository documents my hands-on learning journey through the **AWS Cloud Practitioner (CLF-C02)** program — every lab completed, every concept broken down, and every lesson that made me stop and study it again.
+
+All completed lab exercises are organized in folders in this repository, each with a structured README covering the objective, services used, steps taken, and key takeaways.
 
 ---
 
 ## 🎯 Why AWS Cloud?
 
-As a BA, I work daily with technical teams on cloud-based platforms. I started this program because:
+I've spent over a decade working alongside technical teams and leadership in large organizations. I started this program because:
 
-- 🗣️ I wanted to **speak the language** of cloud architects and developers — not just translate requirements, but understand the infrastructure behind the systems I analyze
-- 💼 I wanted to open doors to **Cloud BA, Solutions Analyst, and Technical BA roles** in cloud transformation projects
-- 📜 I wanted a **recognized certification** to validate what I was already learning on the job
-
----
-
-## 📅 My Daily Study Routine
-
-Consistency over intensity. Every weekday I follow this structure:
-
-| Time Block | Activity | Why It Works |
-|---|---|---|
-| ☀️ **Morning — 30 min** | Flashcard review + re-read yesterday's notes | Spaced repetition builds long-term memory |
-| 📖 **Core Study — 60 min** | One domain deep-dive (AWS Skill Builder + docs + notes) | Focus beats multitasking every time |
-| ✏️ **Practice Questions — 30 min** | 10–20 CLF-C02 style questions; analyse every wrong answer | Active recall > passive reading |
-| 🌙 **Evening — 15 min** | Summarise the day in plain language | If I can't explain it simply, I study it again |
+- 🗣️ I wanted to **speak the language** of cloud architects — not just manage communication around technology, but genuinely understand the infrastructure behind it
+- 💼 I wanted to open doors to **Technical BA, Cloud Consulting, and IT Project Management** roles where business acumen and cloud literacy go hand in hand
+- 📜 I wanted a **recognized, vendor-neutral certification** to validate what I was already exploring independently
 
 ---
 
-## 🗓️ 12-Week Curriculum
+## 💼 What I Bring as a Professional in Transition
 
-| Week | Domain | Daily Focus | Key Concepts | Status |
-|---|---|---|---|---|
-| **1–2** | Cloud Fundamentals | What is cloud? AWS global infrastructure | Regions, AZs, Edge Locations, IaaS / PaaS / SaaS | ✅ Complete |
-| **3–4** | Compute & Storage | EC2, S3, and the building blocks of AWS | EC2 instance types, S3 storage classes, EBS, EFS, Glacier | ✅ Complete |
-| **5–6** | Security & Identity | IAM deep-dive + Shared Responsibility Model | IAM users / roles / policies, MFA, AWS Organizations, compliance | ✅ Complete |
-| **7–8** | Networking & Delivery | How traffic flows in AWS | VPC, Subnets, CloudFront, Route 53, Direct Connect, VPN | 🔄 In Progress |
-| **9–10** | Pricing & Billing | Understanding the AWS financial model | Pricing Calculator, Cost Explorer, Budgets, Support Plans, TCO | 📅 Upcoming |
-| **11** | Well-Architected Framework | The 6 pillars of a good cloud solution | Operational Excellence, Security, Reliability, Performance, Cost, Sustainability | 📅 Upcoming |
-| **12** | Exam Prep | Full mock exams + gap analysis | CLF-C02 format, timed tests, targeted review | 📅 Upcoming |
+This isn't just a study project — it's applied learning grounded in real organizational experience:
 
----
-
-## 🧠 What I've Learned So Far
-
-### ☁️ Cloud Fundamentals
-
-- Explained the value proposition of cloud vs. on-premises infrastructure in business terms
-- Mapped the AWS global infrastructure: **Regions → Availability Zones → Edge Locations**
-- Distinguished **IaaS, PaaS, and SaaS** with real-world vendor examples
-- Understood the **6 pillars of the Well-Architected Framework** and how they apply to business decisions
-
-### 🗄️ S3 & Storage
-
-- Compared **S3 storage classes**: Standard, Intelligent-Tiering, Standard-IA, Glacier Instant Retrieval, Glacier Deep Archive
-- Configured **S3 lifecycle policies** to automatically move data between tiers
-- Explained **EBS vs EFS vs S3** use cases: block storage, file storage, object storage
-- Understood **S3 versioning** and how it supports data recovery and compliance
-
-### 🔐 IAM & Security
-
-- Articulated the **AWS Shared Responsibility Model** — what AWS manages, what the customer owns
-- Configured **IAM users, groups, roles, and policies** following least-privilege principle
-- Identified relevant compliance frameworks: GDPR, HIPAA, SOC 1/2/3, PCI DSS
-- Understood **AWS Organizations**, Service Control Policies (SCPs), and multi-account governance
-- Applied **MFA** and root account security best practices
-
-### 💰 Well-Architected Framework & Cost Tools
-
-- Described each of the **6 pillars**: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability
-- Used **AWS Pricing Calculator** to estimate workload costs from scratch
-- Navigated **Cost Explorer** and set up **AWS Budgets** with alert thresholds
-- Compared **AWS Support Plans**: Developer → Business → Enterprise On-Ramp → Enterprise
-- Analyzed EC2 pricing models: On-Demand, Reserved, Spot, Savings Plans
-
----
-
-## 🛠️ Tools & Resources
-
-| Category | Tools |
-|---|---|
-| **Learning Platform** | AWS Skill Builder, AWS Documentation |
-| **Practice Exams** | Whizlabs, AWS official sample questions |
-| **Cost Estimation** | AWS Pricing Calculator, Cost Explorer |
-| **Diagrams & Notes** | draw.io, Lucidchart, Notion |
-| **Hands-On** | AWS Free Tier Console, IAM Policy Simulator |
-
----
-
-## 🎯 Skills Being Built for the Job Market
-
-```
-Cloud Concepts          ████████████████████  Complete
-S3 & Storage            ████████████████████  Complete
-IAM & Security          ████████████████████  Complete
-Networking (VPC/CDN)    ████████████░░░░░░░░  In Progress
-Billing & Cost Mgmt     ░░░░░░░░░░░░░░░░░░░░  Upcoming
-Well-Architected FW     ░░░░░░░░░░░░░░░░░░░░  Upcoming
-Exam Readiness          ░░░░░░░░░░░░░░░░░░░░  Upcoming
-```
-
----
-
-## 💼 What I Bring as a BA + Cloud Learner
-
-This isn't just technical study — it's applied learning grounded in business analysis experience:
-
-- **Cost conversations** — I translate AWS pricing models into business case language stakeholders actually understand
-- **Requirements thinking** — I approach cloud architecture from the perspective of *what problem does this solve for the user?*
-- **Documentation skills** — User Stories, Use Cases (Given/When/Then), ERDs, MoSCoW prioritization — all in my toolkit
-- **Tool experience** — Salesforce, Workday, draw.io, Lucidchart alongside AWS tooling
-- **Languages** — Ukrainian 🇺🇦 · Polish 🇵🇱 · English 🇬🇧 — comfortable in international, cross-functional teams
+- **Stakeholder communication** — 10+ years of translating complex technical and strategic information into language that lands with different audiences
+- **Change management** — experienced in guiding organizations through process, system, and cultural change; I understand that technology adoption is a human problem as much as a technical one
+- **Documentation & structure** — I write clear, consistent documentation; every lab in this repo reflects that habit
+- **Cross-functional experience** — worked with C-level executives, IT teams, HR, operations, and external vendors across multinational environments
+- **Resilience** — I've launched a business from zero, managed corporate crises, and navigated a full career pivot. I don't shy away from hard things.
+- **Languages** — Ukrainian 🇺🇦 · Polish 🇵🇱 · English 🇬🇧
 
 ---
 
 ## 🚀 Next Steps
 
-- [ ] Complete Weeks 8–12 (Networking → Exam Prep)
 - [ ] Sit the **AWS Certified Cloud Practitioner (CLF-C02)** exam
-- [ ] Begin **AWS Solutions Architect – Associate** track
-- [ ] Apply cloud knowledge in BA / technical analyst roles in cloud migrations and SaaS implementations
+- [ ] Continue **Salesforce Administrator** certification (in progress)
+- [ ] Apply combined cloud + business skills in Technical BA, IT PM, or Cloud Consulting roles
 
 ---
 
 ## 📬 Let's Connect
 
-I'm open to opportunities in **Cloud Business Analysis**, **Technical BA**, and **Cloud Consulting** roles.
+I'm open to conversations about **IT Project Management**, **Technical Business Analysis**, and **Cloud Consulting** roles.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Email](https://img.shields.io/badge/Email-Get_in_touch-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Kateryna_Tsiuk-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kateryna-tsiuk)
 
 ---
 
 <div align="center">
 
-*Built week by week. Updated as I learn. Last updated: 2025.*
+*Built week by week. Updated as I learn. Last updated: April 2026.*
 
 </div>
