@@ -1,4 +1,8 @@
-Lab: Introduction to AWS Identity and Access Management (IAM)
+# Lab: Introduction to AWS Identity and Access Management (IAM)
+
+> **Course:** AWS Cloud Practitioner (CLF-C02)  
+> **Topic:** Security
+> 
 
 The primary goal was to implement the Principle of Least Privilege (PoLP) by configuring security policies, users, and groups within an AWS environment.
 
