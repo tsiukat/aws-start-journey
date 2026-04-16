@@ -3,7 +3,6 @@
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Amazon Inspector, CVE, Lambda Security, Vulnerability Remediation  
-> **Date:** <!-- add date -->
 
 ---
 
