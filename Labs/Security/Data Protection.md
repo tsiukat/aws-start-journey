@@ -60,10 +60,7 @@ Output: `secret1.txt.encrypted.decrypted` — original plaintext restored
 ## Screenshots
 
 ### KMS Key Created — MyKMSKey
-
-<!-- Add screenshot: KMS console showing MyKMSKey with ARN visible -->
-![KMS Key](screenshots/task1-kms-key-created.png)
-
+<img width="1920" height="1040" alt="Create an AWS KMS key" src="https://github.com/user-attachments/assets/2bb9c3c4-84f0-4130-a0bc-c53840f7356a" />
 ---
 
 ### Plaintext File — Before Encryption
