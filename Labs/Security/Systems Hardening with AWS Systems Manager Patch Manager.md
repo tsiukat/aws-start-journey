@@ -51,38 +51,14 @@ Use AWS Systems Manager Patch Manager to patch Linux instances using a default b
 
 ## Screenshots
 
-### Task 1 — Linux Patching Complete
-
-<!-- Add screenshot: Patch now status panel showing 3 Linux instances completed -->
-![Linux Patching](screenshots/task1-linux-patching-complete.png)
+### Task — Windows Patching — Run Command Output
+<img width="1920" height="1040" alt="Bez tytułu-output" src="https://github.com/user-attachments/assets/f41f9b11-e3e4-4667-a3fe-ba509785d1c2" />
 
 ---
 
-### Task 2 — Custom Windows Baseline Created
+### Task — Compliance Summary: 6 Compliant
 
-<!-- Add screenshot: WindowsServerSecurityUpdates baseline page with approval rules visible -->
-![Custom Baseline](screenshots/task2-custom-baseline.png)
-
----
-
-### Task 3 — Windows Patching — Run Command Output
-
-<!-- Add screenshot: Run Command output showing PatchGroup: WindowsProd in execution log -->
-![Windows Patching](screenshots/task3-windows-patching-output.png)
-
----
-
-### Task 4 — Compliance Summary: 6 Compliant
-
-<!-- Add screenshot: Patch Manager Dashboard showing Compliant: 6 -->
-![Compliance Dashboard](screenshots/task4-compliance-summary.png)
-
----
-
-### Task 4 — Per-Instance Patch Details
-
-<!-- Add screenshot: Patch tab for one Windows node showing applied patches and install timestamps -->
-![Patch Details](screenshots/task4-patch-details.png)
+<img width="1920" height="1040" alt="Bez tytułu-compliant" src="https://github.com/user-attachments/assets/c55dbb00-5297-4878-b53a-f56721e81586" />
 
 ---
 
