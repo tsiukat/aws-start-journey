@@ -8,7 +8,7 @@
 
 ## Lab Objective
 
-Create a symmetric AWS KMS encryption key, install the AWS Encryption CLI on an EC2 instance, and use the key to encrypt plaintext files into ciphertext — then decrypt them back to readable form.
+Practical implementation of data protection using AWS Key Management Service (KMS). The goal was to encrypt sensitive plaintext files into ciphertext on an EC2 instance and successfully restore them using the AWS Encryption CLI.
 
 ---
 
@@ -28,6 +28,20 @@ Create a symmetric AWS KMS encryption key, install the AWS Encryption CLI on an 
 - Installed the **AWS Encryption CLI**: `pip3 install aws-encryption-sdk-cli`
 
 ### ✅ Task 3 — Encrypted and Decrypted Data
+During Task 3, the standard lab instructions failed due to environment-specific issues. Here is how they were resolved:
+
+Broken Credentials: Encountered ConfigParseError.
+
+Fix: Cleaned and manually rebuilt ~/.aws/credentials to ensure the [default] profile and aws_session_token were correctly formatted.
+
+Version Incompatibility: The latest aws-encryption-cli required Python 3.8+, but the lab instance used Python 3.7.
+
+Fix: Downgraded the client using pip3 install "aws-encryption-sdk-cli<3.0.0" and manually installed importlib-metadata backport.
+
+CLI Metadata Conflict: Encountered path errors with metadata output.
+
+Fix: Used the -S (Suppress Metadata) flag to bypass metadata logging and focus on core decryption.
+
 
 **Encrypted `secret1.txt`:**
 
@@ -63,24 +77,7 @@ Output: `secret1.txt.encrypted.decrypted` — original plaintext restored
 <img width="1920" height="1040" alt="Create an AWS KMS key" src="https://github.com/user-attachments/assets/2bb9c3c4-84f0-4130-a0bc-c53840f7356a" />
 ---
 
-### Plaintext File — Before Encryption
-
-<!-- Add screenshot: terminal output of `cat secret1.txt` showing "TOP SECRET 1!!!" -->
-![Plaintext](screenshots/task3-plaintext.png)
-
----
-
-### Encrypted File — Ciphertext
-
-<!-- Add screenshot: terminal output of `cat secret1.txt.encrypted` showing unreadable ciphertext -->
-![Ciphertext](screenshots/task3-ciphertext.png)
-
----
-
-### Decrypted File — Plaintext Restored
-
-<!-- Add screenshot: terminal output of `cat secret1.txt.encrypted.decrypted` showing original text -->
-![Decrypted](screenshots/task3-decrypted.png)
+<img width="1920" height="1040" alt="Encrypted and decrypted" src="https://github.com/user-attachments/assets/be29fc82-2c87-4494-b323-556327928186" />
 
 ---
 
