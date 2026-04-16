@@ -7,10 +7,10 @@
 The primary goal was to implement the Principle of Least Privilege (PoLP) by configuring security policies, users, and groups within an AWS environment.
 
 ## 🎯 Objectives
-Configure and apply a custom IAM Password Policy.
-Organize IAM users into functional groups (S3 Support, EC2 Support, EC2 Admin).
-Inspect and analyze Managed vs. Inline IAM policies.
-Validate permissions by testing cross-service access for different user roles.
+- Configure and apply a custom IAM Password Policy.
+- Organize IAM users into functional groups (S3 Support, EC2 Support, EC2 Admin).
+- Inspect and analyze Managed vs. Inline IAM policies.
+- Validate permissions by testing cross-service access for different user roles.
 
 ## 🛠 Key Implementation Steps1. 
 
