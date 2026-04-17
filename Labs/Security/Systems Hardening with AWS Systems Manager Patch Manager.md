@@ -1,4 +1,4 @@
-# Lab 11 — Systems Hardening with AWS Systems Manager Patch Manager
+# Lab Systems Hardening with AWS Systems Manager Patch Manager
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Patch Manager, Patch Baselines, Patch Groups, Compliance  
