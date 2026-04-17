@@ -1,5 +1,5 @@
 
-# Lab 10 — Vulnerability Assessment with Amazon Inspector
+# Lab Vulnerability Assessment with Amazon Inspector
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Amazon Inspector, CVE, Lambda Security, Vulnerability Remediation  
