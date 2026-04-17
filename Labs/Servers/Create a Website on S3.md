@@ -1,5 +1,5 @@
 
-# Lab 170-[JAWS]-Activity - Create a Website on S3
+# Lab Activity - Create a Website on S3
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** Amazon S3, IAM, AWS CLI, Static Website Hosting  
