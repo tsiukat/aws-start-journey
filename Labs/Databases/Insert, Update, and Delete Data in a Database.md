@@ -1,4 +1,4 @@
-# Lab Database Table Operations (SQL DML)
+# Lab Insert, Update, and Delete Data in a Database
 
 > **Course:** AWS Cloud Practitioner (CLF-C02)  
 > **Topic:** MySQL, SQL DML, INSERT / UPDATE / DELETE / Import  
