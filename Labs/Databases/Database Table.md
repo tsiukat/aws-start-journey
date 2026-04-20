@@ -31,7 +31,7 @@ Connect to a MySQL database instance and practice core Data Definition Language 
 
 ### ✅ Task 1 — Connected to the Database Instance
 - Connected to the `Command Host` EC2 instance via **Session Manager**
-- Logged into MySQL: `mysql -u root --password='re:St@rt!9'`
+- Logged into MySQL: `mysql -u root --password='aaaa'`
 
 ### ✅ Task 2 — Created a Database and Table
 
@@ -55,64 +55,33 @@ Discovered a typo: column `Conitinent` → fixed with ALTER:
 ```sql
 ALTER TABLE world.country RENAME COLUMN Conitinent TO Continent;
 ```
+<img width="1920" height="1040" alt="ALTER" src="https://github.com/user-attachments/assets/935286db-7568-45fe-9b23-d372fc748186" />
 
 **Challenge 1 — Created a `city` table with two CHAR columns:**
 
-```sql
 CREATE TABLE world.city (
-  `Name` CHAR(52) NOT NULL DEFAULT '',
-  `Region` CHAR(26) NOT NULL DEFAULT ''
+    Name CHAR(50),
+    Region CHAR(50)
 );
-```
+<img width="1366" height="728" alt="Inserted Data" src="https://github.com/user-attachments/assets/09859d31-603a-412a-bb8e-0406a5cecbbc" />
 
 ### ✅ Task 3 — Dropped Tables and Database
 
 **Challenge 2 — Dropped the `country` table:**
 
-```sql
 DROP TABLE world.country;
-```
 
 Then dropped the `city` table and the entire `world` database:
 
-```sql
 DROP TABLE world.city;
 DROP DATABASE world;
-```
+
+<img width="1920" height="1040" alt="Droped" src="https://github.com/user-attachments/assets/5d66c046-0065-46cb-97ec-0cc752b8c18c" />
 
 Verified with `SHOW DATABASES` — `world` no longer listed.
 
 ---
 
-## Screenshots
-
-### SHOW DATABASES — Before and After CREATE
-
-<!-- Add screenshot: terminal showing world database appears after CREATE DATABASE -->
-![Show Databases](screenshots/task2-show-databases.png)
-
----
-
-### SHOW COLUMNS — Typo Found (Conitinent)
-
-<!-- Add screenshot: SHOW COLUMNS output with misspelled "Conitinent" visible -->
-![Typo Found](screenshots/task2-typo-column.png)
-
----
-
-### ALTER TABLE — Column Renamed
-
-<!-- Add screenshot: SHOW COLUMNS after ALTER showing corrected "Continent" -->
-![Column Fixed](screenshots/task2-column-fixed.png)
-
----
-
-### DROP DATABASE — world Removed
-
-<!-- Add screenshot: SHOW DATABASES after DROP DATABASE showing world is gone -->
-![DB Dropped](screenshots/task3-db-dropped.png)
-
----
 
 ## Key Takeaways
 
