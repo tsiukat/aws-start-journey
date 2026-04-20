@@ -40,6 +40,7 @@ INSERT INTO world.country VALUES
 INSERT INTO world.country VALUES
 ('AUS','Australia','Oceania','Australia and New Zealand',7741220.00,1901,18886000,79.8,351182.00,392911.00,'Australia','Constitutional Monarchy, Federation',135,'AU');
 ```
+<img width="1920" height="1040" alt="Imported Data from SQL File" src="https://github.com/user-attachments/assets/0a1d8d3e-dc48-42e7-8da2-b57fd750cb00" />
 
 Verified with `SELECT * FROM world.country WHERE Code IN ('IRL', 'AUS')`
 
@@ -52,6 +53,7 @@ UPDATE world.country SET Population = 0;
 -- Update multiple columns
 UPDATE world.country SET Population = 100, SurfaceArea = 100;
 ```
+<img width="1920" height="1040" alt="Updated Rows" src="https://github.com/user-attachments/assets/008fc53e-e66e-45eb-bcaf-d9633d0a18c9" />
 
 > ⚠️ UPDATE without WHERE clause affects **all rows** in the table
 
@@ -61,6 +63,7 @@ UPDATE world.country SET Population = 100, SurfaceArea = 100;
 SET FOREIGN_KEY_CHECKS = 0;
 DELETE FROM world.country;
 ```
+<img width="1920" height="1040" alt="Deleted Rows" src="https://github.com/user-attachments/assets/dd98ef51-aa0a-4434-a6ab-a859e1f68c49" />
 
 > ⚠️ DELETE without WHERE clause **permanently removes all rows** — no undo
 
@@ -74,36 +77,7 @@ mysql -u root --password='re:St@rt!9' < /home/ec2-user/world.sql
 
 - Restored all three tables: `city`, `country`, `countrylanguage`
 - Verified with `SHOW TABLES` and `SELECT * FROM country`
-
----
-
-## Screenshots
-
-### Task 2 — Rows Inserted Successfully
-
-<!-- Add screenshot: SELECT output showing IRL and AUS rows in the country table -->
-![Rows Inserted](screenshots/task2-insert-verified.png)
-
----
-
-### Task 3 — UPDATE Without WHERE (All Rows Affected)
-
-<!-- Add screenshot: SELECT output showing Population = 0 for all rows -->
-![Update All](screenshots/task3-update-all-rows.png)
-
----
-
-### Task 4 — DELETE All Rows
-
-<!-- Add screenshot: SELECT output returning empty set after DELETE -->
-![Delete All](screenshots/task4-delete-verified.png)
-
----
-
-### Task 5 — Data Imported from SQL File
-
-<!-- Add screenshot: SHOW TABLES showing all 3 tables + SELECT showing populated country data -->
-![Import Success](screenshots/task5-import-success.png)
+<img width="1920" height="1040" alt="Imported Data from SQL File" src="https://github.com/user-attachments/assets/594f9545-a880-44bf-a0fe-a403d2ef2e3c" />
 
 ---
 
