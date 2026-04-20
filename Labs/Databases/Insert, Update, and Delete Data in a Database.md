@@ -5,6 +5,7 @@
 
 ---
 
+
 ## Lab Objective
 
 Practice core Data Manipulation Language (DML) operations on a pre-created `world` database: insert rows, update values, delete records, and bulk-import data from an SQL backup file.
@@ -32,14 +33,15 @@ Practice core Data Manipulation Language (DML) operations on a pre-created `worl
 
 ### ✅ Task 2 — Inserted Data
 
-CREATE TABLE world.city (
-    Name CHAR(50),
-    Region CHAR(50)
-);
+```sql
+INSERT INTO world.country VALUES
+('IRL','Ireland','Europe','British Islands',70273.00,1921,3775100,76.8,75921.00,73132.00,'Ireland/Éire','Republic',1447,'IE');
 
-Verified with SHOW COLUMNS FROM world.city;
-<img width="1366" height="728" alt="Inserted Data" src="https://github.com/user-attachments/assets/237e1b61-b54a-4845-b31b-17308fde66d5" />
+INSERT INTO world.country VALUES
+('AUS','Australia','Oceania','Australia and New Zealand',7741220.00,1901,18886000,79.8,351182.00,392911.00,'Australia','Constitutional Monarchy, Federation',135,'AU');
+```
 
+Verified with `SELECT * FROM world.country WHERE Code IN ('IRL', 'AUS')`
 
 ### ✅ Task 3 — Updated Rows
 
