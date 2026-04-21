@@ -16,6 +16,8 @@ Set up automated monitoring for an EC2 instance: create a CloudWatch alarm that 
 - Created SNS topic `MyCwAlarm` (Standard type)
 - Subscribed an email address → confirmed subscription via inbox link
 - Status changed from **Pending → Confirmed**
+  <img width="1920" height="1040" alt="subscription" src="https://github.com/user-attachments/assets/5af822f5-f9f2-4611-b036-bc5447114c00" />
+  <img width="1366" height="728" alt="subscription-confirmed" src="https://github.com/user-attachments/assets/cac2099f-b63b-4cd2-8a38-72677bf7cc47" />
 
 ### ✅ Task 2 — Created a CloudWatch Alarm
 - Navigated to **CloudWatch → Metrics → EC2 → Per-Instance Metrics**
@@ -25,6 +27,8 @@ Set up automated monitoring for an EC2 instance: create a CloudWatch alarm that 
   - Period: **1 minute**
   - Threshold: **> 60%** → state: **In alarm**
   - Action: publish to `MyCwAlarm` SNS topic
+    <img width="1366" height="728" alt="Created a CloudWatch Alarm" src="https://github.com/user-attachments/assets/22c7e7db-0c3d-471b-a122-401139c2fb6c" />
+
 
 ### ✅ Task 3 — Stress Tested the Instance
 - Connected to the `Stress Test` EC2 instance via the provided URL
@@ -33,59 +37,22 @@ Set up automated monitoring for an EC2 instance: create a CloudWatch alarm that 
 ```bash
 sudo stress --cpu 10 -v --timeout 400s
 ```
+<img width="1920" height="1040" alt="stressed" src="https://github.com/user-attachments/assets/3fd366ed-90a7-41b4-89a5-13336579bf94" />
 
 - Opened a second terminal session and ran `top` to observe live CPU usage at 100%
 - Monitored CloudWatch alarm — status changed to **In alarm**
+  <img width="1920" height="1040" alt="stressed-1" src="https://github.com/user-attachments/assets/5a39102a-919d-435e-9d83-535d43a85ead" />
+
 - Received SNS email notification: **AWS Notifications — LabCPUUtilizationAlarm**
+  <img width="1920" height="1040" alt="notification" src="https://github.com/user-attachments/assets/dbe0f466-30ea-4b8e-9915-6221684c7d80" />
+
 
 ### ✅ Task 4 — Created a CloudWatch Dashboard
 - Created dashboard `LabEC2Dashboard`
 - Added a **Line widget** with `CPUUtilization` metric for the Stress Test instance
 - Saved the dashboard for ongoing monitoring access
+<img width="1920" height="1040" alt="Dashboard" src="https://github.com/user-attachments/assets/37949002-34a7-4852-854b-6f2ffdd6a96d" />
 
----
-
-## Screenshots
-
-### Task 1 — SNS Subscription Confirmed
-
-<!-- Add screenshot: SNS Subscriptions page showing Status: Confirmed -->
-![SNS Confirmed](screenshots/task1-sns-confirmed.png)
-
----
-
-### Task 2 — CloudWatch Alarm Configured
-
-<!-- Add screenshot: LabCPUUtilizationAlarm page showing threshold > 60% and SNS action -->
-![Alarm Config](screenshots/task2-alarm-configured.png)
-
----
-
-### Task 3 — CPU at 100% (stress command running)
-
-<!-- Add screenshot: terminal showing `top` with CPU utilization at ~100% -->
-![CPU Stress](screenshots/task3-cpu-stress.png)
-
----
-
-### Task 3 — Alarm State: In Alarm
-
-<!-- Add screenshot: CloudWatch alarm status showing "In alarm" with spike visible on graph -->
-![In Alarm](screenshots/task3-in-alarm.png)
-
----
-
-### Task 3 — SNS Email Notification Received
-
-<!-- Add screenshot: email inbox showing AWS Notifications alarm email -->
-![Alarm Email](screenshots/task3-alarm-email.png)
-
----
-
-### Task 4 — CloudWatch Dashboard
-
-<!-- Add screenshot: LabEC2Dashboard showing CPUUtilization line graph with the spike -->
-![Dashboard](screenshots/task4-dashboard.png)
 
 ---
 
