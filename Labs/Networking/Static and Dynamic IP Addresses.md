@@ -26,14 +26,15 @@ A customer (Bob) reports that his EC2 instance gets a new public IP address ever
 |-------|-------------|--------------|
 | After launch | 35.85.40.254  | 10.0.10.235 |
 <img width="1920" height="1040" alt="test instance - ipv4" src="https://github.com/user-attachments/assets/ffd887fa-490b-4851-929e-c0ccaa59c6ed" />
--
 
-| After Stop | ❌ released | ✅ unchanged |
+
+| After Start | ❌ released | ✅ unchanged |
 <img width="1920" height="1040" alt="test instance - ipv4-after stop" src="https://github.com/user-attachments/assets/65799430-ce13-4e09-b4b9-0add505ab1c5" />
--
+
 
 | After Start | 🔄 new IP assigned | ✅ unchanged |
 <img width="1920" height="1040" alt="test instance - ipv4-after restart" src="https://github.com/user-attachments/assets/5e68e588-d63b-4896-afcf-d1e566748f99" />
+
 
 
 **Conclusion:** The public IP is **dynamic** — released on stop and re-assigned randomly on start. The private IP is **static** within the VPC — it never changes.
@@ -43,41 +44,14 @@ A customer (Bob) reports that his EC2 instance gets a new public IP address ever
 - Selected the new EIP → **Actions → Associate Elastic IP address**
 - Associated to: `test instance`, Private IP auto-selected
 - Verified: EIP now shows as the instance's Public IPv4
+<img width="1920" height="1040" alt="Elastic IP address associated successfully" src="https://github.com/user-attachments/assets/2e3152d9-40ea-4c58-83e8-9ce51dc5d6c8" />
 
 **Step 4 — Verified static behavior**
 - Stopped and restarted the instance
 - Public IPv4 remained the **same EIP address** after restart ✅
 - Issue resolved — Bob's instance now has a persistent public IP
+<img width="1920" height="1040" alt="Public after restart" src="https://github.com/user-attachments/assets/6b92dfa9-8db6-4d4d-bb94-52a54af959b0" />
 
----
-
-## Screenshots
-
-### Before Fix — Public IP Changes After Stop/Start
-
-<!-- Add screenshot: Networking tab showing different public IP after instance restart -->
-![Dynamic IP](screenshots/task1-dynamic-ip-change.png)
-
----
-
-### Elastic IP Allocated
-
-<!-- Add screenshot: Elastic IPs page showing newly allocated EIP address -->
-![EIP Allocated](screenshots/task1-eip-allocated.png)
-
----
-
-### EIP Associated to Instance
-
-<!-- Add screenshot: Associate Elastic IP page with test instance selected -->
-![EIP Associated](screenshots/task1-eip-associated.png)
-
----
-
-### After Fix — Public IP Stays Same After Restart
-
-<!-- Add screenshot: Networking tab showing EIP address unchanged after stop/start -->
-![Static IP](screenshots/task1-static-ip-confirmed.png)
 
 ---
 
