@@ -44,56 +44,45 @@ EC2 Instance (Amazon Linux 2023, t3.micro)
 | Network ACL | `Public Subnet NACL` | Rule 100: Allow all traffic inbound + outbound |
 | Security Group | `public security group` | Inbound: SSH, HTTP, HTTPS; Outbound: all |
 
+VPC `Test VPC` CIDR: `192.168.0.0/18`
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/99d94bea-8360-4be4-bcee-f6d6066eeb12" />
+
+Subnet -`Public subnet` CIDR: `192.168.1.0/28`, public
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/b12452ec-29ff-4a24-8f64-0eb198adcaf4" />
+
+Internet Gateway- `IGW test VPC` Attached to Test VPC
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1ab8eced-ef0a-4d2c-a8a3-5c1495ea5d6c" />
+
+Route Table- `Public route table`  Route: `0.0.0.0/0 → IGW`; associated to Public subnet
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/18a858a0-8f99-438c-8065-a00dc1785594" />
+
+Rule 100: Allow all traffic outbound
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d1dd8260-6e18-4411-892b-c35494a09233" />
+
+Rule 100: Allow all traffic inbound 
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/dab42b3b-14ee-42da-bde5-158f96633d48" />
+
+Security Group - `public security group` Inbound: SSH, HTTP, HTTPS; Outbound: all 
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/5e477fc8-a1c3-4335-9ca2-a52a2f293a40" />
+
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/95e48297-2aca-465c-a5a2-749473e283c2" />
+
+
 ### ✅ Task 2 - Launched EC2 Instance
 - AMI: Amazon Linux 2023, type: t3.micro
 - Placed in Test VPC → Public Subnet, Auto-assign Public IP: Enabled
 - Security group: `public security group`
 - Connected via SSH using key pair `vockey`
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/8f050665-7b20-4459-a5b4-dced6822b88c" />
 
 ### ✅ Task 3 - Verified Internet Connectivity
 
 ```bash
 ping google.com
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/c80d988a-5f2f-443e-8043-d41515ea34b3" />
 
 Received replies from `google.com` with **0% packet loss** - VPC is fully routable to the internet ✅
-
----
-
-## Screenshots
-
-### Route Table - IGW Route Added and Subnet Associated
-
-<!-- Add screenshot: Route table showing 0.0.0.0/0 → IGW and Public subnet association -->
-![Route Table](screenshots/task1-route-table.png)
-
----
-
-### IGW Attached to VPC
-
-<!-- Add screenshot: Internet Gateway page showing state "Attached" to Test VPC -->
-![IGW Attached](screenshots/task1-igw-attached.png)
-
----
-
-### NACL - Inbound and Outbound Rules
-
-<!-- Add screenshot: NACL inbound and outbound rules showing Rule 100: Allow All Traffic -->
-![NACL Rules](screenshots/task1-nacl-rules.png)
-
----
-
-### Security Group - Inbound Rules
-
-<!-- Add screenshot: Security group inbound rules showing SSH, HTTP, HTTPS allowed -->
-![Security Group](screenshots/task1-security-group.png)
-
----
-
-### ping google.com - Successful
-
-<!-- Add screenshot: terminal showing ping google.com with replies and 0% packet loss -->
-![Ping Success](screenshots/task3-ping-success.png)
 
 ---
 
