@@ -11,7 +11,7 @@ A startup owner (Paulo) needs help setting up his first VPC. Requirements:
 - ~15,000 private IP addresses in the VPC
 - IPv4 CIDR in the `192.x.x.x` range
 - At least 50 IP addresses in a public subnet
-<img width="1920" height="1040" alt="VPC created" src="https://github.com/user-attachments/assets/b8d75ac6-4e45-43e2-b6ea-364747d22a6e" />
+
 
 ---
 
@@ -25,7 +25,7 @@ A startup owner (Paulo) needs help setting up his first VPC. Requirements:
 
 > **RFC 1918 private ranges:**  
 > `10.0.0.0/8` · `172.16.0.0/12` · `192.168.0.0/16`
-
+<img width="1920" height="1040" alt="VPC created" src="https://github.com/user-attachments/assets/b8d75ac6-4e45-43e2-b6ea-364747d22a6e" />
 ---
 
 ## Tasks Completed
