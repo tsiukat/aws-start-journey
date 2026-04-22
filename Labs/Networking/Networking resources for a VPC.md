@@ -74,6 +74,8 @@ Security Group - `public security group` Inbound: SSH, HTTP, HTTPS; Outbound: al
 - Security group: `public security group`
 - Connected via SSH using key pair `vockey`
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/8f050665-7b20-4459-a5b4-dced6822b88c" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f4441dd9-f0be-49ed-bee0-5538205f3252" />
+
 
 ### ✅ Task 3 - Verified Internet Connectivity
 
