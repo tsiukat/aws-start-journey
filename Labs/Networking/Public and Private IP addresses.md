@@ -22,31 +22,22 @@ Compared the Networking tab of both EC2 instances:
 | Private IPv4 | ✅ assigned | ✅ assigned |
 | Public IPv4 | ❌ not assigned | ✅ assigned |
 | Internet access | ❌ no | ✅ yes |
+<img width="1920" height="1040" alt="Instance B - yes public" src="https://github.com/user-attachments/assets/12da5db5-e90b-4832-9cd3-da529264b299" />
+<img width="1920" height="1040" alt="No public" src="https://github.com/user-attachments/assets/66e7a8e9-da3a-42c8-9070-aeb751c68d3d" />
+
 
 **Root cause:** Instance A has no public IP address. Private IPs are only routable within the VPC — without a public IP, the instance cannot be reached from or communicate with the internet, even if all other configurations are identical.
 
 ### ✅ Task 2 — Verified via SSH Connection
 
 - Connected via SSH to **Instance B** (public IP) — ✅ successful
-- Attempted SSH to **Instance A** (private IP only) — ❌ connection failed
 - This confirmed the diagnosis: private IPs are not reachable from outside the VPC
+<img width="1366" height="728" alt="putty connection" src="https://github.com/user-attachments/assets/89d24c5b-3571-48b9-993f-98f2b617b61f" />
 
 **Customer's second question — Using a public CIDR (e.g. 12.0.0.0/16) for a VPC:**
 
 Not recommended. AWS VPCs should use **RFC 1918 private ranges** (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`). Using a public IP range for a VPC CIDR can cause routing conflicts — if resources inside the VPC try to reach the real public owner of that IP range, responses may be misrouted back into the VPC instead of reaching the correct destination.
-
-
-<!-- Add screenshot: terminal showing successful SSH connection to Instance B -->
-![SSH Success](screenshots/task2-ssh-instance-b-success.png)
-
----
-
-### SSH to Instance A — Failed
-
-<!-- Add screenshot: terminal showing connection timeout or refused for Instance A private IP -->
-![SSH Failed](screenshots/task2-ssh-instance-a-failed.png)
-
----
+<img width="1920" height="1040" alt="Whois IP 12 0 0 0" src="https://github.com/user-attachments/assets/19a8e04a-7b53-4db4-b1ce-8880d528d09b" />
 
 ## Key Takeaways
 
