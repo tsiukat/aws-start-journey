@@ -18,14 +18,21 @@ A customer (Bob) reports that his EC2 instance gets a new public IP address ever
 - AMI: Amazon Linux 2, type: t3.micro
 - Placed in Lab VPC → Public Subnet 1, Auto-assign Public IP: **Enabled**
 - Attached existing security group: `Linux Instance SG`
+<img width="1920" height="1040" alt="test instance" src="https://github.com/user-attachments/assets/0503ca31-f9f8-452e-9b46-200959e07a48" />
 
 **Step 2 — Observed dynamic IP behavior**
 
 | Event | Public IPv4 | Private IPv4 |
 |-------|-------------|--------------|
-| After launch | e.g. `54.23.x.x` | e.g. `10.0.1.x` |
+| After launch | 35.85.40.254  | 10.0.10.235 |
+<img width="1920" height="1040" alt="test instance - ipv4" src="https://github.com/user-attachments/assets/ffd887fa-490b-4851-929e-c0ccaa59c6ed" />
+
 | After Stop | ❌ released | ✅ unchanged |
+<img width="1920" height="1040" alt="test instance - ipv4-after stop" src="https://github.com/user-attachments/assets/65799430-ce13-4e09-b4b9-0add505ab1c5" />
+
 | After Start | 🔄 new IP assigned | ✅ unchanged |
+<img width="1920" height="1040" alt="test instance - ipv4-after restart" src="https://github.com/user-attachments/assets/5e68e588-d63b-4896-afcf-d1e566748f99" />
+
 
 **Conclusion:** The public IP is **dynamic** — released on stop and re-assigned randomly on start. The private IP is **static** within the VPC — it never changes.
 
