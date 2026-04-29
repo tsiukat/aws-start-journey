@@ -55,29 +55,30 @@ WHERE Region = 'Southern Europe' AND Population > 50000000;
 
 ### Full Table Query — SELECT *
 
-<!-- Add screenshot: terminal output of SELECT * FROM world.country showing all rows -->
-![Select All](screenshots/task2-select-all.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6ca27084-0e99-46b0-9a74-0dc8967cd03d" />
 
 ---
 
 ### COUNT() — Number of Rows
 
-<!-- Add screenshot: terminal output of SELECT COUNT(*) showing row count -->
-![Count Rows](screenshots/task2-count-rows.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/10c97040-ab4a-44e2-a47a-f2acb5f329c9" />
+
 
 ---
 
 ### ORDER BY Population DESC with WHERE Filter
 
-<!-- Add screenshot: query result showing countries with population > 50M ordered descending -->
-![Filtered Ordered](screenshots/task2-where-order-by.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d290c8d7-0319-4b08-8525-0a3946e1e538" />
 
 ---
 
 ### Challenge Result — Southern Europe > 50M
 
-<!-- Add screenshot: query result showing the answer to the challenge -->
-![Challenge Result](screenshots/challenge-southern-europe.png)
+SELECT Name, Region, Population
+FROM world.country
+WHERE Region = 'Southern Europe' AND Population > 50000000;
+
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1dfe5ae0-5056-4eef-bce5-7b02bbb88e47" />
 
 ---
 
