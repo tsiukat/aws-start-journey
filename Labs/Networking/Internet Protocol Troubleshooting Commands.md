@@ -30,6 +30,8 @@ Practice the core network troubleshooting commands used in real support scenario
 ```bash
 ping 8.8.8.8 -c 5
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/bf2e57d9-0e4b-49ad-8eb1-a8350b4e9e6e" />
+
 Sends 5 ICMP echo requests to Google's DNS. Confirms basic connectivity and shows round-trip time and packet loss.
 
 ---
@@ -38,6 +40,8 @@ Sends 5 ICMP echo requests to Google's DNS. Confirms basic connectivity and show
 ```bash
 traceroute 8.8.8.8
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/558bd6bc-f358-4185-9a5c-fe6e52ade6d3" />
+
 Shows every hop between the EC2 instance and the destination. Three asterisks `***` = failed hop. Packet loss near the end = server/ISP issue; near the start = local/AWS issue.
 
 ---
@@ -48,6 +52,8 @@ netstat -tp      # established connections
 netstat -tlp     # listening services
 netstat -ntlp    # listening services, no port name resolution
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/1fd3e706-45d2-4cb2-83f5-e86244fe2c7c" />
+
 Shows which ports are active on the local host - used to verify that a port is (or is not) listening.
 
 ---
@@ -57,6 +63,8 @@ Shows which ports are active on the local host - used to verify that a port is (
 sudo yum install telnet -y
 telnet www.google.com 80
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/50243231-2f83-4a20-b387-592263235f6f" />
+
 Confirms TCP connectivity to a specific port. `Connection refused` = something is blocking (firewall/SG). `Connection timed out` = no network route.
 
 ---
@@ -65,6 +73,8 @@ Confirms TCP connectivity to a specific port. `Connection refused` = something i
 ```bash
 curl -vLo /dev/null https://aws.com
 ```
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/25cc5a8b-cdf8-4eb0-94a9-01a9978a5ad0" />
+
 Full verbose HTTP request - shows response code, redirects, SSL handshake. Confirms application-layer connectivity end to end.
 
 ---
