@@ -33,7 +33,7 @@ Configured via **RDS → Create database** with the following key settings:
 
 > **Screenshot:** RDS Console → Databases → `aurora` status = **Available**
 
-![aurora-instance-available](screenshots/01-aurora-instance-available.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/e83a92ac-e38c-480e-82e3-a26ad8539ab2" />
 
 ---
 
