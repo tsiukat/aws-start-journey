@@ -6,24 +6,6 @@
 
 ---
 
-## Setup
-
-Connected to EC2 (Command Host) via **Session Manager**, then logged into MySQL:
-
-```bash
-sudo su
-cd /home/ec2-user/
-mysql -u root --password='re:St@rt!9'
-```
-
-Database in use: `world` — tables: `city`, `country`, `countrylanguage`.
-
-> **Screenshot:** Terminal showing successful MySQL login prompt
-
-![mysql-connected](screenshots/01-mysql-connected.png)
-
----
-
 ## Key Queries
 
 ### Aggregate Functions — summarize entire table
