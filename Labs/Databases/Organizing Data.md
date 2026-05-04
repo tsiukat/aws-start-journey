@@ -97,6 +97,8 @@ FROM world.country;
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/0d97d1af-4757-468b-8934-2c9f64a6cf2d" />
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/323d08f1-6f56-44c1-a582-c42f16eefbbb" />
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/de44a058-32f2-41bc-bafa-5ce9846d56bd" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9554ecc7-c6c4-4689-87d7-492772bf0ee5" />
+
 
 
 
