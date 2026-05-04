@@ -20,7 +20,8 @@ Database in use: `world` — tables: `city`, `country`, `countrylanguage`.
 
 > **Screenshot:** Terminal showing successful MySQL login prompt
 
-![mysql-connected](screenshots/01-mysql-connected.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/10fbb40e-0abd-42c0-96a3-bbca1e654d72" />
+
 
 ---
 
