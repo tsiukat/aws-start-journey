@@ -43,7 +43,6 @@ Connected to the pre-created EC2 instance `Command Host` via **Session Manager**
 
 > **Screenshot:** EC2 Console → Instances → Connect → Session Manager terminal open
 
-![session-manager-connected](screenshots/02-session-manager-connected.png)
 
 ---
 
@@ -56,17 +55,17 @@ sudo yum install mariadb -y
 
 **Connect to Aurora using the cluster Writer endpoint:**
 ```bash
-mysql -u admin --password='admin123' -h <writer-endpoint>
+mysql -u admin --password='admin123' -h aurora.cluster-cdbim2tzvxui.us-west-2.rds.amazonaws.com
 ```
 
 The Writer endpoint follows the pattern:
 ```
-aurora.cluster-xxxxxxxx.us-west-2.rds.amazonaws.com
+aurora.cluster-cdbim2tzvxui.us-west-2.rds.amazonaws.com
 ```
 
 > **Screenshot:** Terminal showing successful MariaDB connection → `MySQL [(none)]>` prompt
 
-![mysql-connected](screenshots/03-mysql-connected.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/690efa76-56d3-4523-bce8-35bf0449a2c6" />
 
 ---
 
@@ -100,7 +99,8 @@ SELECT * FROM country WHERE GNP > 35000 AND Population > 10000000;
 
 > **Screenshot:** Query result showing AUS and THA rows in the terminal
 
-![query-result](screenshots/04-query-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ef93723f-f21c-40f3-8a66-a42c337b433b" />
+
 
 ---
 
