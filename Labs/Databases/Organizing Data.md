@@ -2,7 +2,7 @@
 
 **Course:** AWS Cloud Practitioner Exam Prep  
 **Topic:** SQL Data Grouping — GROUP BY, OVER, RANK()  
-**Duration:** ~45 min
+
 
 ---
 
@@ -40,7 +40,8 @@ Returns one row per region with the total population.
 
 > **Screenshot:** Query result — one row with Region + total Population
 
-![groupby-result](screenshots/02-groupby-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f84c13f9-e510-456d-893e-6b47adc94eb2" />
+
 
 ---
 
@@ -57,7 +58,10 @@ Unlike `GROUP BY`, `OVER()` keeps individual rows visible while adding a cumulat
 
 > **Screenshot:** Query result showing Population + Running Total per country
 
-![running-total](screenshots/03-running-total.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6719dae6-d2cd-4732-981b-d86dcd8b1d56" />
+
+
+
 
 ---
 
@@ -75,7 +79,8 @@ WHERE Region = 'Australia and New Zealand';
 
 > **Screenshot:** Query result with Running Total + Ranked columns
 
-![rank-result](screenshots/04-rank-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/4b51e55d-7a11-4e63-84f0-4bf64d38e710" />
+
 
 ---
 
@@ -88,8 +93,12 @@ FROM world.country;
 ```
 
 > **Screenshot:** Challenge query result — all regions with country ranks
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/0d97d1af-4757-468b-8934-2c9f64a6cf2d" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/323d08f1-6f56-44c1-a582-c42f16eefbbb" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/de44a058-32f2-41bc-bafa-5ce9846d56bd" />
 
-![challenge-result](screenshots/05-challenge-result.png)
+
+
 
 ---
 
