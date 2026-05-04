@@ -1,5 +1,4 @@
-# Lab: Organizing Data with GROUP BY and Window Functions
-
+# Lab: Organizing Data 
 **Course:** AWS Cloud Practitioner Exam Prep  
 **Topic:** SQL Data Grouping — GROUP BY, OVER, RANK()  
 
