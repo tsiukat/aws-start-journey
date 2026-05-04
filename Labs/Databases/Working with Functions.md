@@ -43,7 +43,8 @@ FROM world.country;
 
 > **Screenshot:** Query result showing all five aggregate values in one row
 
-![aggregate-result](screenshots/02-aggregate-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/4d6be3f7-15cf-4d27-9c2e-d741ec7cc7cb" />
+
 
 ---
 
@@ -62,7 +63,9 @@ WHERE substring_index(Region, " ", 1) = "Southern";
 
 > **Screenshot:** Query result — countries where Region starts with "Southern"
 
-![substring-result](screenshots/03-substring-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/b627660e-8a59-48be-9486-d9411a84cec5" />
+
+
 
 ---
 
@@ -80,7 +83,9 @@ WHERE LENGTH(TRIM(Region)) < 10;
 
 > **Screenshot:** DISTINCT result — unique short region names only
 
-![distinct-result](screenshots/04-distinct-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/33a366dd-802d-4522-9879-13578bcbef90" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/22c6ed09-2253-4769-beb8-2b6c4adf4289" />
+
 
 ---
 
@@ -91,12 +96,13 @@ SELECT
   substring_index(Region, "/", 1) AS "Region Name 1",
   substring_index(Region, "/", -1) AS "Region Name 2"
 FROM world.country
-WHERE Region = "Micronesian/Caribbean";
+WHERE Region = "Micronesia/Caribbean";
 ```
 
 > **Screenshot:** Challenge query result — two separate region columns
 
-![challenge-result](screenshots/05-challenge-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/e2bb7bc6-f66a-4398-b2f7-1b04155db7fb" />
+
 
 ---
 
