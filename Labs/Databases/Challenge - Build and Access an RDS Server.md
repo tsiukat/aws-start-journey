@@ -81,12 +81,7 @@ INSERT INTO RESTART (StudentID, StudentName, RestartCity, GraduationDate) VALUES
 (10, 'Tetyana Lysenko', 'Cherkasy', '2026-06-19 12:00:00');
 ```
 
-> **Screenshot:** `CREATE TABLE RESTART` — Query OK
-
-<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/4d5103fc-c018-405f-a76e-49a7c4214d08" />
-
-
-> **Screenshot:** `SELECT * FROM RESTART` — all 10 rows
+> **Screenshot:** `CREATE TABLE RESTART` — Query OK & SELECT * FROM RESTART` — all 10 rows
 
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1bb0c3fa-6d1b-4a71-804d-286abfce4743" />
 
