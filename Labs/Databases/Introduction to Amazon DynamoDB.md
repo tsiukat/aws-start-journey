@@ -64,6 +64,9 @@ Partition key: Psy
 Sort key: Gangnam Style
 ```
 
+> **Screenshot:** Query result — Psy / Gangnam Style returned
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/db361118-a67f-4294-8819-a0ac0606ce55" />
+
 Returns the exact item instantly via index lookup.
 
 ### Scan + Filter — slower, reads entire table
@@ -73,16 +76,12 @@ Attribute: Year
 Type: Number
 Value: 1971
 ```
+> **Screenshot:** Scan + Filter result — John Lennon (Year = 1971)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6db8e42f-4a20-4f09-b023-5098394116ab" />
 
 Scans all items, then filters — less efficient for large tables.
 
-> **Screenshot:** Query result — Psy / Gangnam Style returned
 
-![query-result](screenshots/03-query-result.png)
-
-> **Screenshot:** Scan + Filter result — John Lennon (Year = 1971)
-
-![scan-result](screenshots/04-scan-result.png)
 
 ---
 
