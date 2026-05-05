@@ -38,7 +38,8 @@ This restricts database access to the web server only — no public internet acc
 
 > **Screenshot:** DB Security Group — Inbound rules showing port 3306 source
 
-![security-group](screenshots/01-security-group.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f2e75b61-4c0d-4349-a35d-deeb2d8c29b7" />
+
 
 ---
 
@@ -56,7 +57,8 @@ Two private subnets across two AZs — required for Multi-AZ deployment.
 
 > **Screenshot:** DB Subnet Group created with two subnets
 
-![subnet-group](screenshots/02-subnet-group.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/87865022-3dd7-4f94-8afd-7e4f23038412" />
+
 
 ---
 
@@ -78,8 +80,9 @@ In **RDS Console → Create database** with key settings:
 | Automated backups | Disabled (lab only) |
 
 > **Screenshot:** RDS Console → `lab-db` status = **Available**
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d94fc534-9512-43a6-acac-1b2f2339aa59" />
 
-![rds-available](screenshots/03-rds-available.png)
+
 
 > **Screenshot:** Connectivity & Security tab — Endpoint URL copied
 
