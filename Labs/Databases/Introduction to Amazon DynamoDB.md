@@ -31,7 +31,8 @@ In **DynamoDB Console → Create table**:
 
 > **Screenshot:** DynamoDB Console → `Music` table status = **Active**
 
-![table-created](screenshots/01-table-created.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/38ebe576-905b-4384-802d-a3f4ae967055" />
+
 
 ---
 
@@ -49,7 +50,8 @@ Each item can have unique attributes — no need to pre-define a fixed schema.
 
 > **Screenshot:** DynamoDB → Explore Items — all 3 items visible in the table
 
-![items-added](screenshots/02-items-added.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/e38651bc-a5a6-4906-b7a0-80e2ec5df7d9" />
+
 
 ---
 
