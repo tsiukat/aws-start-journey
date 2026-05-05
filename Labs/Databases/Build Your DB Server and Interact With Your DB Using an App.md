@@ -1,7 +1,7 @@
 # Lab: Build a DB Server and Interact with It Using a Web App
 
 **Course:** AWS Cloud Practitioner Exam Prep  
-**Topic:** Amazon RDS — Multi-AZ MySQL Instance + Web Application Integration  
+**Topic:** Amazon RDS - Multi-AZ MySQL Instance + Web Application Integration  
 
 ---
 
@@ -12,19 +12,19 @@ Deploy a production-grade relational database on Amazon RDS and connect it to a 
 - Accessible only from the web server (not the public internet)
 - Hosted in private subnets across two Availability Zones
 
-**Architecture — before and after:**
+**Architecture - before and after:**
 
 ```
 BEFORE:  [User] → [Web Server (EC2)]
 
-AFTER:   [User] → [Web Server (EC2)] → [RDS MySQL — Primary AZ]
+AFTER:   [User] → [Web Server (EC2)] → [RDS MySQL - Primary AZ]
                                               ↕ sync replication
-                                       [RDS MySQL — Standby AZ]
+                                       [RDS MySQL - Standby AZ]
 ```
 
 ---
 
-## Task 1 — Create Security Group for RDS
+## Task 1 - Create Security Group for RDS
 
 In **VPC Console → Security Groups → Create security group**:
 
@@ -34,16 +34,16 @@ In **VPC Console → Security Groups → Create security group**:
 | VPC | Lab VPC |
 | Inbound rule | MySQL/Aurora (port **3306**) from `Web Security Group` |
 
-This restricts database access to the web server only — no public internet access.
+This restricts database access to the web server only - no public internet access.
 
-> **Screenshot:** DB Security Group — Inbound rules showing port 3306 source
+> **Screenshot:** DB Security Group - Inbound rules showing port 3306 source
 
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f2e75b61-4c0d-4349-a35d-deeb2d8c29b7" />
 
 
 ---
 
-## Task 2 — Create DB Subnet Group
+## Task 2 - Create DB Subnet Group
 
 In **RDS Console → Subnet groups → Create DB Subnet Group**:
 
@@ -53,7 +53,7 @@ In **RDS Console → Subnet groups → Create DB Subnet Group**:
 | VPC | Lab VPC |
 | Subnets | `10.0.1.0/24` (AZ1) + `10.0.3.0/24` (AZ2) |
 
-Two private subnets across two AZs — required for Multi-AZ deployment.
+Two private subnets across two AZs - required for Multi-AZ deployment.
 
 > **Screenshot:** DB Subnet Group created with two subnets
 
@@ -62,7 +62,7 @@ Two private subnets across two AZs — required for Multi-AZ deployment.
 
 ---
 
-## Task 3 — Launch Amazon RDS MySQL Instance
+## Task 3 - Launch Amazon RDS MySQL Instance
 
 In **RDS Console → Create database** with key settings:
 
@@ -83,14 +83,9 @@ In **RDS Console → Create database** with key settings:
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d94fc534-9512-43a6-acac-1b2f2339aa59" />
 
 
-
-> **Screenshot:** Connectivity & Security tab — Endpoint URL copied
-
-![rds-endpoint](screenshots/04-rds-endpoint.png)
-
 ---
 
-## Task 4 — Connect Web App to the Database
+## Task 4 - Connect Web App to the Database
 
 Opened the web application via the EC2 public IP → clicked **RDS** tab → entered connection details:
 
@@ -101,9 +96,9 @@ Opened the web application via the EC2 public IP → clicked **RDS** tab → ent
 | Username | `main` |
 | Password | `lab-password` |
 
-After submitting, the **Address Book** application loaded — backed by the RDS database. Added, edited, and deleted contacts to confirm data persistence.
+After submitting, the **Address Book** application loaded - backed by the RDS database. Added, edited, and deleted contacts to confirm data persistence.
 
-> **Screenshot:** Web app — Address Book loaded and connected to RDS
+> **Screenshot:** Web app - Address Book loaded and connected to RDS
 
 ![address-book](screenshots/05-address-book.png)
 
@@ -124,12 +119,12 @@ After submitting, the **Address Book** application loaded — backed by the RDS 
 
 In this lab I learned how to:
 
-- **Deploy a Multi-AZ RDS instance** — understanding that AWS automatically provisions a primary and a standby replica in separate AZs and handles synchronous replication without manual configuration
-- **Design network security in layers** — the DB Security Group accepts traffic only from the Web Security Group (not from `0.0.0.0/0`), which is the correct production pattern for protecting a database
-- **Create a DB Subnet Group** — grasping why RDS requires subnets in at least two AZs even for a single instance, because Multi-AZ needs room to place the standby
-- **Connect an application to a managed database** using an endpoint URL instead of an IP address — endpoints remain stable even after failover, which is a core advantage of managed RDS over self-hosted databases
+- **Deploy a Multi-AZ RDS instance** - understanding that AWS automatically provisions a primary and a standby replica in separate AZs and handles synchronous replication without manual configuration
+- **Design network security in layers** - the DB Security Group accepts traffic only from the Web Security Group (not from `0.0.0.0/0`), which is the correct production pattern for protecting a database
+- **Create a DB Subnet Group** - grasping why RDS requires subnets in at least two AZs even for a single instance, because Multi-AZ needs room to place the standby
+- **Connect an application to a managed database** using an endpoint URL instead of an IP address - endpoints remain stable even after failover, which is a core advantage of managed RDS over self-hosted databases
 
-> Key takeaway: Amazon RDS offloads the hardest parts of database operations — replication, failover, patching — so teams focus on application logic. Multi-AZ is the minimum viable setup for any production workload where downtime is unacceptable.
+> Key takeaway: Amazon RDS offloads the hardest parts of database operations - replication, failover, patching - so teams focus on application logic. Multi-AZ is the minimum viable setup for any production workload where downtime is unacceptable.
 
 ---
 
