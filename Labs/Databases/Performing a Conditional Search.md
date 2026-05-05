@@ -5,23 +5,6 @@
 
 ---
 
-## Setup
-
-Connected to EC2 (Command Host) via **Session Manager**, then logged into MySQL:
-
-```bash
-sudo su
-cd /home/ec2-user/
-mysql -u root --password='re:St@rt!9'
-```
-
-Database in use: `world` — contains tables `city`, `country`, `countrylanguage`.
-
-> **Screenshot:** Terminal showing successful MySQL login prompt
-
-![mysql-connected](screenshots/01-mysql-connected.png)
-
----
 
 ## Key Queries
 
@@ -43,7 +26,8 @@ WHERE Population BETWEEN 50000000 AND 100000000;
 
 > **Screenshot:** Query result — countries with population between 50M and 100M
 
-![between-result](screenshots/02-between-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/66633c69-87ac-4ab6-8483-9044503bec60" />
+
 
 ---
 
@@ -57,7 +41,8 @@ WHERE Region LIKE "%Europe%";
 
 > **Screenshot:** Query result showing Europe Population Total
 
-![sum-europe](screenshots/03-sum-europe.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/388e082e-35f2-4d35-80f6-b5983e6ecfaf" />
+
 
 ---
 
@@ -68,6 +53,7 @@ SELECT Name, Capital, Region, SurfaceArea, Population
 FROM world.country
 WHERE LOWER(Region) LIKE "%central%";
 ```
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/3fbbd032-f167-4aa1-8d4b-ed49dd0c9168" />
 
 ---
 
@@ -80,8 +66,7 @@ WHERE Region LIKE "%North America%";
 ```
 
 > **Screenshot:** Challenge query result
-
-![challenge-result](screenshots/04-challenge-result.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/a61241f3-dfe0-46b0-b1bd-1a4048917df0" />
 
 ---
 
