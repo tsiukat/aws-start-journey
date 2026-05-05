@@ -100,7 +100,8 @@ After submitting, the **Address Book** application loaded - backed by the RDS da
 
 > **Screenshot:** Web app - Address Book loaded and connected to RDS
 
-![address-book](screenshots/05-address-book.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f06429a7-b16f-41a0-a427-143a37586989" />
+
 
 ---
 
