@@ -59,41 +59,6 @@ In **IAM Console → Users → awsstudent**:
 
 ---
 
-## Task 4 — Configure AWS CLI
-
-```bash
-aws configure
-```
-
-| Prompt | Value |
-|---|---|
-| AWS Access Key ID | from Details → AccessKey |
-| AWS Secret Access Key | from Details → SecretKey |
-| Default region | `us-west-2` |
-| Default output format | `json` |
-
-> **Screenshot:** Terminal — `aws configure` prompts filled in
-
-![aws-configure](screenshots/04-aws-configure.png)
-
----
-
-## Task 5 — Query IAM via CLI
-
-**Verify connection — list IAM users:**
-
-```bash
-aws iam list-users
-```
-
-Returns a JSON response with all IAM users in the account.
-
-> **Screenshot:** Terminal — `aws iam list-users` JSON output
-
-![list-users](screenshots/05-list-users.png)
-
----
-
 ## Challenge — Download lab_policy as JSON via CLI only
 
 **Step 1 — Find the policy ARN and version:**
