@@ -86,8 +86,6 @@ Checked each networking layer in **VPC Console → left navigation panel**:
 Apache itself was running correctly. The connection was blocked at the **network level** — most commonly one or more of:
 
 - Missing inbound rule for **port 80 (HTTP)** in the Security Group
-- Missing or incorrect route to the **Internet Gateway** in the Route Table
-- Internet Gateway not attached to the VPC
 
 > **Key insight:** In AWS, connectivity requires *every layer* to be configured correctly — EC2, Security Group, NACL, Route Table, and Internet Gateway must all align.
 
