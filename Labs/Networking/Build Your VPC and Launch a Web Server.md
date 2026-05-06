@@ -123,24 +123,31 @@ In **EC2 Console → Launch instances**:
 
 ```bash
 #!/bin/bash
-yum install -y httpd mysql php
-wget https://aws-tc-largeobjects.s3.us-west-2.amazonaws.com/.../lab-app.zip
-unzip lab-app.zip -d /var/www/html/
-chkconfig httpd on
-service httpd start
+# Install Apache, PHP, MariaDB client, wget and unzip
+dnf install -y httpd php mariadb105 wget unzip
+
+# Download and extract lab files
+wget https://aws-tc-largeobjects.s3.us-west-2.amazonaws.com/CUR-TF-100-RESTRT-1/267-lab-NF-build-vpc-web-server/s3/lab-app.zip
+unzip -o lab-app.zip -d /var/www/html/
+
+# Enable auto-start and run Apache web server
+systemctl enable httpd
+systemctl start httpd
 ```
 
 Waited for **status checks passed**, then opened `Public IPv4 DNS` in browser.
 
 > **Screenshot:** EC2 Console → Web Server 1 status = **3/3 checks passed**
 
-<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/0a32fdcc-a1d8-4367-b8ef-8b139b381f93" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/82b9c94b-4b94-49fb-88be-cdd9d5db6442" />
+
 
 
 
 > **Screenshot:** Browser — web application loaded via Public IPv4 DNS ✅
 
-![web-server-live](screenshots/06-web-server-live.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/b775ca64-88f7-4021-982a-1433002c724d" />
+
 
 ---
 
