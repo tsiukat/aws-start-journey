@@ -140,11 +140,14 @@ After ~5 minutes, `AlarmHigh` entered **In alarm** state → Auto Scaling launch
 
 > **Screenshot:** CloudWatch → AlarmHigh state = **In alarm**
 
-![cloudwatch-alarm](screenshots/07-cloudwatch-alarm.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/42013431-6462-435e-9258-f849e750bb55" />
+
 
 > **Screenshot:** EC2 Console → more than 2 `Lab Instance` instances running
 
-![scaled-out](screenshots/08-scaled-out.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/82d056f7-41ef-41a9-a4a4-54438efb04e9" />
+
+
 
 ---
 
