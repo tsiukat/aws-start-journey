@@ -20,20 +20,6 @@ Internet → Internet Gateway → Public Subnet → EC2 Instance (Apache/httpd)
 
 ---
 
-## Task 1 — Connect to EC2 via SSH
-
-Connected to the Amazon Linux EC2 instance using SSH with a `.pem` key:
-
-```bash
-chmod 400 labsuser.pem
-ssh -i labsuser.pem ec2-user@<public-ip>
-```
-
-> **Screenshot:** Terminal showing successful SSH login to EC2
-
-![ssh-connected](screenshots/01-ssh-connected.png)
-
----
 
 ## Task 2 — Install and Start Apache (httpd)
 
@@ -52,17 +38,18 @@ Result: `active (running)`
 
 **Test in browser:**
 ```
-http://<PUBLIC-IP-OF-INSTANCE>
+http://35.92.233.41
 ```
 Page did **not load** — confirming a network-level block despite Apache running.
 
 > **Screenshot:** Terminal showing httpd status = `active`
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/2dc3553a-b0ee-4d4a-8233-a19a3afdc8f4" />
 
-![httpd-active](screenshots/02-httpd-active.png)
 
 > **Screenshot:** Browser showing the page fails to load (connection timeout)
 
-![browser-blocked](screenshots/03-browser-blocked.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/84ae8380-8241-4f28-957b-696e98035310" />
+
 
 ---
 
@@ -80,19 +67,17 @@ Checked each networking layer in **VPC Console → left navigation panel**:
 | **Security Group** | Inbound rule allowing **HTTP (port 80)** from `0.0.0.0/0`? |
 | **Network ACL** | Inbound/outbound rules allowing HTTP traffic? |
 
-> **Screenshot:** VPC Console → Route Table showing routes (or missing route)
 
-![route-table](screenshots/04-route-table.png)
+> **Screenshot:** Security Group inbound rules — added **HTTP (port 80)** 
 
-> **Screenshot:** Security Group inbound rules — before and after fix
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/451b4815-7e33-4bda-84b4-6094a55713a5" />
 
-![security-group-fix](screenshots/05-security-group-fix.png)
 
 **After fixing the misconfiguration, Apache test page loaded successfully:**
 
 > **Screenshot:** Browser showing Apache HTTP Server test page ✅
 
-![apache-working](screenshots/06-apache-working.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/b96494ac-9e1a-4671-af54-c414a3045b42" />
 
 ---
 
