@@ -2,7 +2,6 @@
 
 **Course:** AWS Cloud Practitioner Exam Prep  
 **Topic:** Route 53 — Health Checks, Failover Routing Policy, SNS Alerts  
-**Duration:** ~45 min
 
 ---
 
@@ -100,18 +99,18 @@ In **Route 53 → Hosted zones → domain.vocareum.training → Create record**:
 | Record ID | `FailoverSecondary` |
 
 > **Screenshot:** Route 53 → Hosted zone — both A records (Primary + Secondary) listed
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/0fd3e6ca-0385-4a64-8225-42aeb523b603" />
 
-![dns-records](screenshots/03-dns-records.png)
 
 ---
 
 ## Task 4 — Verify DNS Resolution
 
-Opened `http://www.domain.vocareum.training/cafe/` in browser → café site loaded, Server Information confirmed **us-west-2a** (CafeInstance1 = Primary).
+Opened `http://www.6332239_1778150449.vocareum.training/cafe/` in browser → café site loaded, Server Information confirmed **us-west-2a** (CafeInstance1 = Primary).
 
 > **Screenshot:** Browser — café site via Route 53 DNS showing AZ = us-west-2a
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/2caf59d9-6ffe-44ae-9ad7-d7824eb1f29a" />
 
-![dns-verified](screenshots/04-dns-verified.png)
 
 ---
 
@@ -127,15 +126,17 @@ Received SNS email: **"ALARM: Primary-Website-Health-awsroute53-..."**
 
 > **Screenshot:** Route 53 → Health check → Monitoring tab showing **Unhealthy** status
 
-![health-check-unhealthy](screenshots/05-health-check-unhealthy.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1f3d7539-76fd-414f-951e-f892a60f01d5" />
+
 
 > **Screenshot:** Browser — same URL now showing AZ = us-west-2b (failover active)
 
-![failover-confirmed](screenshots/06-failover-confirmed.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f8ef1d65-5aaa-4dd8-bcd4-21a28305b3aa" />
+
 
 > **Screenshot:** Email — SNS alarm notification for primary health check failure
 
-![sns-alarm-email](screenshots/07-sns-alarm-email.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/204ad41b-4c81-4c7b-ab62-960e4e25bf2b" />
 
 ---
 
