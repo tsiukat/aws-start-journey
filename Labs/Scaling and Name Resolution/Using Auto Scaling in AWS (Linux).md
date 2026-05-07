@@ -2,7 +2,6 @@
 
 **Course:** AWS Cloud Practitioner Exam Prep  
 **Topic:** EC2 Auto Scaling + ALB — Deployed via AWS CLI + Console  
-**Duration:** ~45 min
 
 ---
 
@@ -130,7 +129,8 @@ aws ec2 create-image --name WebServerAMI --instance-id NEW-INSTANCE-ID
 
 > **Screenshot:** Auto Scaling Group → Activity tab — 2 instances launched
 
-![asg-activity](screenshots/04-asg-activity.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/dcaba5b9-ed2f-4416-86f9-427f3b4884ba" />
+
 
 ---
 
@@ -144,11 +144,15 @@ After ~5 minutes, Auto Scaling Group **Activity tab** showed a new instance bein
 
 > **Screenshot:** Target Group → Targets tab — both instances **healthy**
 
-![targets-healthy](screenshots/05-targets-healthy.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/4df9553c-82a1-4736-b785-7a5c9c526513" />
+
 
 > **Screenshot:** Auto Scaling Group → Activity tab — scale-out event triggered
 
-![scale-out-event](screenshots/06-scale-out-event.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/5eb8bc4e-0cbb-4e68-8eb5-e575166ff084" />
+> **Screenshot:** EC2 → new instances being launched
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/c1834576-907d-4b3a-b2a3-93008b37cd05" />
+
 
 ---
 
