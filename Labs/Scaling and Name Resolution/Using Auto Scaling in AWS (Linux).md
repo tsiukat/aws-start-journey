@@ -77,11 +77,8 @@ Opened `http://PUBLIC-DNS-ADDRESS/index.php` in browser — web app confirmed ru
 
 > **Screenshot:** Terminal — `run-instances` output with InstanceId
 
-![cli-instance-launched](screenshots/01-cli-instance-launched.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/3d1f2934-f9ea-4378-a145-f30d56c12551" />
 
-> **Screenshot:** Browser — WebServer `index.php` loaded successfully
-
-![webserver-running](screenshots/02-webserver-running.png)
 
 ### Create AMI from the running instance
 
@@ -91,7 +88,8 @@ aws ec2 create-image --name WebServerAMI --instance-id NEW-INSTANCE-ID
 
 > **Screenshot:** EC2 Console → AMIs — `WebServerAMI` status = **Available**
 
-![ami-available](screenshots/03-ami-available.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/be7a4221-0705-418f-b4d0-75555b95737f" />
+
 
 ---
 
@@ -149,8 +147,10 @@ After ~5 minutes, Auto Scaling Group **Activity tab** showed a new instance bein
 
 > **Screenshot:** Auto Scaling Group → Activity tab — scale-out event triggered
 
-<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/5eb8bc4e-0cbb-4e68-8eb5-e575166ff084" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/84899a22-fe69-45d9-8ee7-3fb61c4eeebf" />
+
 > **Screenshot:** EC2 → new instances being launched
+> 
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/c1834576-907d-4b3a-b2a3-93008b37cd05" />
 
 
