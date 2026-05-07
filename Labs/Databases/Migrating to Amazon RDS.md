@@ -201,6 +201,7 @@ Opened a MySQL session from CafeInstance → `DatabaseConnections` graph showed 
 
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ae18a245-3620-4e87-ac07-7ff871afb28c" />
 
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/3d3cac7b-c067-40c4-b4df-4d44c7526a68" />
 
 ---
 
