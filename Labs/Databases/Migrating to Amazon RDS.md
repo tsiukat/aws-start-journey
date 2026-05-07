@@ -33,7 +33,8 @@ Opened café website via `CafeInstanceURL`, placed several orders via the Menu p
 
 > **Screenshot:** Café website → Order History showing order count before migration
 
-![orders-before](screenshots/01-orders-before.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ed5c6f37-ac07-4751-adac-0fc4c4cbd406" />
+
 
 ---
 
@@ -113,7 +114,9 @@ aws rds describe-db-instances \
 
 > **Screenshot:** Terminal — RDS status = **available** with endpoint address
 
-![rds-available](screenshots/02-rds-available.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f3d9eee1-5bc5-4930-8a79-bad17c3161c6" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9179795d-cde8-40d2-b7dc-6f880f5b14ca" />
+
 
 ---
 
@@ -138,25 +141,24 @@ curl -o global-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global
 
 ```bash
 mysql --user=root --password='Re:Start!9' \
-  --host=<RDS-endpoint> \
-  --ssl-ca=./global-bundle.pem \
-  < cafedb-backup.sql
+--host=cafedbinstance.ckxhpnoa0kpd.us-west-2.rds.amazonaws.com \
+--ssl-ca=./global-bundle.pem \
+< cafedb-backup.sql
 ```
 
 ### Verify migration
 
 ```bash
 mysql --user=root --password='Re:Start!9' \
-  --host=<RDS-endpoint> \
-  --ssl-ca=./global-bundle.pem \
-  cafe_db
-
-select * from product;
+--host=cafedbinstance.ckxhpnoa0kpd.us-west-2.rds.amazonaws.com \
+--ssl-ca=./global-bundle.pem \
+-e "use cafe_db; select * from product;"
 ```
 
 > **Screenshot:** Terminal — `select * from product` showing migrated data in RDS
 
-![data-migrated](screenshots/03-data-migrated.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/5c7d7a9b-4fba-460e-a2d8-b3450b06b6fc" />
+
 
 ---
 
@@ -166,7 +168,7 @@ Updated the database connection string in **AWS Systems Manager → Parameter St
 
 | Parameter | Old value | New value |
 |---|---|---|
-| `/cafe/dbUrl` | localhost | `cafedbinstance.xxxxx.us-west-2.rds.amazonaws.com` |
+| `/cafe/dbUrl` | localhost | `cafedbinstance.ckxhpnoa0kpd.us-west-2.rds.amazonaws.com` |
 
 No code changes needed — the application reads the endpoint from Parameter Store at runtime.
 
@@ -174,7 +176,8 @@ Verified by opening the café website → Order History showed the **same order 
 
 > **Screenshot:** Café website → Order History — order count matches pre-migration count
 
-![orders-after](screenshots/04-orders-after.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/357ff2e8-4c23-4514-8734-4e2407077172" />
+
 
 ---
 
@@ -194,9 +197,10 @@ Key metrics observed:
 
 Opened a MySQL session from CafeInstance → `DatabaseConnections` graph showed **1 connection**. Exited session → graph dropped to **0** after 1 minute.
 
-> **Screenshot:** RDS Console → Monitoring tab → DatabaseConnections = 1 (active session)
+> **Screenshot:** RDS Console → Monitoring tab → DatabaseConnections active session
 
-![cloudwatch-connections](screenshots/05-cloudwatch-connections.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ae18a245-3620-4e87-ac07-7ff871afb28c" />
+
 
 ---
 
