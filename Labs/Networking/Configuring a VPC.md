@@ -159,7 +159,7 @@ Private subnet instances can now reach the internet outbound — without being p
 
 ---
 
-##  Challenge — Bastion → Private Instance → ping amazon.com
+##  Challenge — Testing Connectivity for Private Instance
 
 Launched `Private Instance` in Private Subnet (no public IP), then:
 
@@ -170,18 +170,13 @@ Launched `Private Instance` in Private Subnet (no public IP), then:
 ssh PRIVATE-IP      # e.g. ssh 10.0.2.123
 # password: lab-password
 
-# Step 3: Test outbound internet via NAT gateway
-ping -c 3 amazon.com
+# Step 3: Test Outbound Internet via NAT Gateway
+While the ping command (ICMP protocol) is a common test, it is often restricted by default network security policies. To definitively prove internet connectivity, the curl command is used to make an HTTPS request to a global service.
+
+curl -I https://www.google.com
 ```
 
-Expected output:
-```
-64 bytes from 176.32.98.166: icmp_seq=1 ttl=222 time=79.2 ms
-64 bytes from 176.32.98.166: icmp_seq=2 ttl=222 time=79.2 ms
-64 bytes from 176.32.98.166: icmp_seq=3 ttl=222 time=79.0 ms
-```
-
-Successful ping confirms the Private Instance reached the internet through the NAT gateway — not directly.
+The successful HTTP 200 OK response confirms that the Private Instance can reach the internet. Since this instance resides in a private subnet without a public IP address, this connectivity is routed through the NAT Gateway located in the public subnet, as defined in the Private Route Table. This architecture ensures the instance remains protected from unsolicited inbound traffic while maintaining necessary outbound access.
 
 > **Screenshot:** Terminal — curl -I google.com from Private Instance showing successful replies
 
