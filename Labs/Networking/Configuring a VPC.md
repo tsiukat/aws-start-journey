@@ -171,7 +171,10 @@ ssh PRIVATE-IP      # e.g. ssh 10.0.2.123
 # password: lab-password
 
 # Step 3: Test Outbound Internet via NAT Gateway
-While the ping command (ICMP protocol) is a common test, it is often restricted by default network security policies. To definitively prove internet connectivity, the curl command is used to make an HTTPS request to a global service.
+While the ping command (ICMP protocol) is a common test,
+it is often restricted by default network security policies.
+To definitively prove internet connectivity,
+the curl command is used to make an HTTPS request to a global service.
 
 curl -I https://www.google.com
 ```
