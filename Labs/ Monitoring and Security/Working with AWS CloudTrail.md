@@ -31,8 +31,9 @@ Opened café website → normal state confirmed.
 Added SSH inbound rule (port 22, My IP only) to the Web Server security group as a baseline legitimate change - this establishes my own fingerprint in the CloudTrail logs for comparison.
 
 > **Screenshot:** EC2 → Security Group → Inbound rules - SSH port 22, source = My IP
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9bc25052-8046-407f-85a8-506dca56f262" />
 
-![sg-before-hack](screenshots/01-sg-before-hack.png)
+
 
 ---
 
@@ -43,8 +44,8 @@ In **CloudTrail → Create trail**:
 | Setting | Value |
 |---|---|
 | Trail name | `monitor` |
-| S3 bucket | `monitoring####` (new) |
-| KMS alias | `initials-KMS` |
+| S3 bucket | `monitoring1188` (new) |
+| KMS alias | `kt-KMS` |
 
 Refreshed the café website after ~1 minute → site was **hacked** (inappropriate image displayed).
 
@@ -52,7 +53,8 @@ Returned to the Security Group → found a **new inbound rule**: SSH from `0.0.0
 
 > **Screenshot:** EC2 → Security Group → Inbound rules showing unauthorized SSH rule from 0.0.0.0/0
 
-![sg-hacked](screenshots/02-sg-hacked.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f4bc3832-2600-48bd-ae98-de70d9323a46" />
+
 
 ---
 
