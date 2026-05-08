@@ -39,7 +39,7 @@ aws configure
 
 ```bash
 aws s3api create-bucket \
-  --bucket flowlog###### \
+  --bucket flowlog061188 \
   --region us-west-2 \
   --create-bucket-configuration LocationConstraint='us-west-2'
 ```
@@ -50,6 +50,7 @@ aws s3api create-bucket \
 aws ec2 describe-vpcs \
   --query 'Vpcs[*].[VpcId,Tags[?Key==`Name`].Value,CidrBlock]' \
   --filters "Name=tag:Name,Values='VPC1'"
+# Result: vpc-07baf985ba6841ede
 ```
 
 ### Enable Flow Logs on VPC1 → S3
@@ -57,17 +58,17 @@ aws ec2 describe-vpcs \
 ```bash
 aws ec2 create-flow-logs \
   --resource-type VPC \
-  --resource-ids <vpc-id> \
+  --resource-ids vpc-07baf985ba6841ede \
   --traffic-type ALL \
   --log-destination-type s3 \
-  --log-destination arn:aws:s3:::flowlog######
+  --log-destination arn:aws:s3:::flowlog061188
 ```
 
-Confirmed with `aws ec2 describe-flow-logs` → status: **ACTIVE**
+Confirmed with `aws ec2 describe-flow-logs` 
+> **Screenshot:** Terminal — `describe-flow-logs` 
 
-> **Screenshot:** Terminal — `describe-flow-logs` showing ACTIVE status
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/bec63839-e42a-4122-abae-afcb5652f7d7" />
 
-![flow-logs-active](screenshots/01-flow-logs-active.png)
 
 ---
 
@@ -80,12 +81,12 @@ Opened `http://WebServerIP` → connection timeout. EC2 Instance Connect → fai
 ```bash
 # Inspect instance state, SGs, subnet
 aws ec2 describe-instances \
-  --filter "Name=ip-address,Values='<WebServerIP>'" \
+  --filter "Name=ip-address,Values='44.251.156.111'" \
   --query 'Reservations[*].Instances[*].[State,PrivateIpAddress,InstanceId,SecurityGroups,SubnetId,KeyName]'
 
 # Check route table for the public subnet
 aws ec2 describe-route-tables \
-  --filter "Name=association.subnet-id,Values='<VPC1PubSubnetID>'"
+  --filter "Name=association.subnet-id,Values='subnet-0b221f625217967d8'"
 ```
 
 **Root cause:** Public subnet route table was **missing the route to the Internet Gateway** (`0.0.0.0/0 → IGW`).
@@ -94,16 +95,18 @@ aws ec2 describe-route-tables \
 
 ```bash
 aws ec2 create-route \
-  --route-table-id <RouteTableId> \
+  --route-table-id rtb-0c8b3cbd477213e2b \
   --destination-cidr-block 0.0.0.0/0 \
-  --gateway-id <IGW-id>
+  --gateway-id igw-0afbfc13f682a8534
 ```
 
 **Result:** Website loaded — "Hello From Your Web Server!" ✅
 
 > **Screenshot:** Terminal — `create-route` success + browser showing web server response
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/e0bcc555-7337-4c2c-85fd-d494e33b9508" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/a04348b5-a755-4eed-a6aa-48080f0ff192" />
 
-![route-fixed](screenshots/02-route-fixed.png)
+
 
 ---
 
@@ -116,28 +119,28 @@ Web server accessible but EC2 Instance Connect still failed. Security Group alre
 ```bash
 # Check Network ACL for the public subnet
 aws ec2 describe-network-acls \
-  --filter "Name=association.subnet-id,Values='<VPC1PublicSubnetID>'" \
+  --filter "Name=association.subnet-id,Values='subnet-0b221f625217967d8'" \
   --query 'NetworkAcls[*].[NetworkAclId,Entries]'
 ```
 
 **Root cause:** Network ACL had a **DENY rule blocking SSH (port 22)** — overriding the Security Group's allow rule.
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/945fe1e1-b0ac-4a30-a032-9f68548c37a2" />
 
 > Key distinction: Security Groups are stateful (allow-only). Network ACLs are **stateless** and evaluated before Security Groups — a DENY in the NACL blocks traffic regardless of SG settings.
 
 ### Fix
 
 ```bash
-aws ec2 delete-network-acl-entry \
-  --network-acl-id <NetworkAclId> \
-  --ingress \
-  --rule-number <RuleNumber>
+aws ec2 delete-network-acl-entry
+--network-acl-id 'acl-0f613ad0c147c636f'
+--ingress --rule-number 40
 ```
 
 **Result:** EC2 Instance Connect succeeded — `hostname` returned `web-server` ✅
 
-> **Screenshot:** Terminal — successful EC2 Instance Connect + hostname output
+> **Screenshot:** Terminal — successful EC2 Instance Connect + hostname output **ACTIVE**
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/c241c1c9-eb72-4e4d-8508-06782983c0ef" />
 
-![ssh-fixed](screenshots/03-ssh-fixed.png)
 
 ---
 
@@ -147,8 +150,8 @@ aws ec2 delete-network-acl-entry \
 
 ```bash
 mkdir flowlogs && cd flowlogs
-aws s3 cp s3://flowlog######/ . --recursive
-cd AWSLogs/<AccountID>/vpcflowlogs/us-west-2/yyyy/mm/dd/
+aws s3 cp s3://flowlog061188/ . --recursive
+cd AWSLogs/166998533480/vpcflowlogs/us-west-2/2026/05/08/
 gunzip *.gz
 ```
 
@@ -167,9 +170,6 @@ grep -rn REJECT . | wc -l
 
 # REJECTs involving port 22
 grep -rn 22 . | grep REJECT
-
-# Filtered to my IP address only
-grep -rn 22 . | grep REJECT | grep <my-ip>
 ```
 
 Matched log entries to **my failed SSH attempts** — count matched number of connection attempts.
@@ -177,13 +177,14 @@ Matched log entries to **my failed SSH attempts** — count matched number of co
 ### Translate Unix timestamp to human-readable
 
 ```bash
-date -d @<timestamp>
+date -d @1778241794
 # Returns: exact time of the rejected connection attempt
 ```
 
 > **Screenshot:** Terminal — filtered REJECT log entries showing my IP and port 22
 
-![flow-log-analysis](screenshots/04-flow-log-analysis.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/13c2ee21-7f06-4da8-ac33-ed5d7b74d786" />
+
 
 ---
 
