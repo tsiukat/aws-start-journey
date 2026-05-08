@@ -32,7 +32,8 @@ In **Systems Manager → Run Command → AWS-ConfigureAWSPackage**:
 | Version | latest |
 | Target | Web Server (instance) |
 
-Verified: **Overall status = Success** → "Successfully installed AmazonCloudWatchAgent"
+> **Screenshot: Verified. **Overall status = Success** → "Successfully installed AmazonCloudWatchAgent"
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/0be7801e-9b5b-45f2-af71-4c72634915c4" />
 
 ### Step 2: Create agent config in Parameter Store
 
@@ -70,6 +71,7 @@ Filter pattern:
 ```
 [ip, id, user, timestamp, request, status_code=404, size]
 ```
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f5bf61ce-f51e-4a04-b8ea-e77629f6e61d" />
 
 | Setting | Value |
 |---|---|
@@ -90,11 +92,13 @@ Triggered alarm by hitting 5+ non-existent URLs → alarm turned **red** → rec
 
 > **Screenshot:** CloudWatch → HttpAccessLog stream showing 404 entries
 
-![log-404](screenshots/02-log-404.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/97301add-3ef0-41fa-8dd1-6f5363dcfe14" />
+
 
 > **Screenshot:** CloudWatch → `404 Errors` alarm in **ALARM** state (red)
 
-![alarm-triggered](screenshots/03-alarm-triggered.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d945f805-924c-4f64-bb6a-3624057b446d" />
+
 
 ---
 
@@ -109,7 +113,9 @@ Standard EC2 metrics (CPU, network) show the instance from outside. CloudWatch A
 
 > **Screenshot:** CloudWatch → CWAgent metrics — mem_used_percent graph
 
-![cwagent-metrics](screenshots/04-cwagent-metrics.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f2b91768-1915-467d-9be3-45692146dfe8" />
+
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9282264c-dc5a-4016-9d7e-082a8f13e5f9" />
 
 ---
 
@@ -129,7 +135,7 @@ In **CloudWatch → Events → Rules → Create rule**:
 
 > **Screenshot:** Email — CloudWatch Events SNS notification after instance stopped
 
-![events-notification](screenshots/05-events-notification.png)
+
 
 ---
 
