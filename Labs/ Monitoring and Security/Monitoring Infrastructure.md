@@ -90,9 +90,9 @@ Filter pattern:
 
 Triggered alarm by hitting 5+ non-existent URLs → alarm turned **red** → received email alert. ✅
 
-> **Screenshot:** CloudWatch → HttpAccessLog stream showing 404 entries
+> **Screenshot:** email notification showing 404 entries
 
-<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/97301add-3ef0-41fa-8dd1-6f5363dcfe14" />
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f2c2911f-a2ad-4ad0-b845-4af3600cf9a1" />
 
 
 > **Screenshot:** CloudWatch → `404 Errors` alarm in **ALARM** state (red)
