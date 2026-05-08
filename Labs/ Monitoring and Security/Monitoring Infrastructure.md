@@ -48,15 +48,6 @@ Config defines:
 - **Logs**: `/var/log/httpd/access_log` → `HttpAccessLog` log group, `/var/log/httpd/error_log` → `HttpErrorLog`
 - **Metrics**: CPU (idle/iowait/user/system), disk (used%, inodes), disk I/O, memory (mem_used%), swap — every **10 seconds**
 
-### Step 3: Start agent using Run Command
-
-Run **AmazonCloudWatch-ManageAgent** with:
-- Action: `configure` | Mode: `ec2` | Config Source: `ssm` | Location: `Monitor-Web-Server`
-
-> **Screenshot:** Systems Manager → Run Command → Overall status = **Success**
-
-![agent-installed](screenshots/01-agent-installed.png)
-
 ---
 
 ## Task 2 — Monitor Application Logs (CloudWatch Logs)
