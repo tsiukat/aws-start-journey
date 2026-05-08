@@ -129,11 +129,12 @@ In **CloudWatch → Events → Rules → Create rule**:
 | Event source | EC2 |
 | Event type | EC2 Instance State-change Notification |
 | States | `stopped` + `terminated` |
-| Target | SNS topic (email subscription) |
+| Target | CloudWatchLog streams |
 
 **Test:** Stopped the Web Server EC2 instance → received JSON-formatted email notification within ~1 minute. ✅
 
-> **Screenshot:** Email — CloudWatch Events SNS notification after instance stopped
+> **Screenshot:** Email — CloudWatch Log streams notification after instance stopped
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/4807c166-25e1-433a-9877-d0a819abcfbf" />
 
 
 
@@ -161,8 +162,8 @@ Added two managed rules:
 AWS Config continuously re-evaluates rules — any new resource without a `project` tag is flagged automatically.
 
 > **Screenshot:** AWS Config → Rules — both rules showing Compliant/Non-compliant counts
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/241f0828-bea4-4d87-bf07-a2359b696609" />
 
-![config-rules](screenshots/06-config-rules.png)
 
 ---
 
