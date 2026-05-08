@@ -159,7 +159,7 @@ Private subnet instances can now reach the internet outbound — without being p
 
 ---
 
-## Optional Challenge — Bastion → Private Instance → ping amazon.com
+##  Challenge — Bastion → Private Instance → ping amazon.com
 
 Launched `Private Instance` in Private Subnet (no public IP), then:
 
@@ -183,9 +183,11 @@ Expected output:
 
 Successful ping confirms the Private Instance reached the internet through the NAT gateway — not directly.
 
-> **Screenshot:** Terminal — `ping amazon.com` from Private Instance showing successful replies
+> **Screenshot:** Terminal — curl -I google.com from Private Instance showing successful replies
 
-![ping-success](screenshots/07-ping-success.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/fac1510f-9c1d-4b25-8c94-fd0f01685749" />
+
+
 
 ---
 
