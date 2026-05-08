@@ -62,7 +62,6 @@ Filter pattern:
 ```
 [ip, id, user, timestamp, request, status_code=404, size]
 ```
-<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f5bf61ce-f51e-4a04-b8ea-e77629f6e61d" />
 
 | Setting | Value |
 |---|---|
