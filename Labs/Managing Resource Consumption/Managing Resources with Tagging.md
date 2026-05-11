@@ -123,6 +123,7 @@ Verified in EC2 Console: 2 instances stopped → then restarted.
 
 > **Screenshot:** EC2 Console → 2 development instances in **Stopped** state after stopinator ran
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/8298202a-90a4-49df-9af4-ae99320279a1" />
+
 > **Screenshot:** EC2 Console → 2 development instances in **Initializing** state after stopinator ran
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6babc961-ddd8-4e1c-b93b-b79084a84e94" />
 
