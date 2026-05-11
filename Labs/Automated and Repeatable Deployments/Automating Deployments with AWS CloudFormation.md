@@ -45,12 +45,13 @@ Launched a CloudFormation stack from `task1.yaml`, which provisions:
 5. Monitored the **Events** tab until status reached `CREATE_COMPLETE`
 
 > **Screenshot:** CloudFormation console — Events tab showing CREATE_COMPLETE
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6fa6d6e5-bc3c-4ce9-9b12-327f913bf28c" />
 
-![stack-create-complete](screenshots/01-stack-create-complete.png)
 
 > **Screenshot:** Resources tab — VPC, Subnet, Security Group listed
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/4ae9dc47-fccd-40f6-aaf0-5ab2533b8e40" />
 
-![stack-resources](screenshots/02-stack-resources.png)
+
 
 ---
 
@@ -75,15 +76,15 @@ Resources:
 4. Reviewed the **Change Set** — CloudFormation showed **Add** for the bucket only; all other resources remained unchanged
 
 > **Screenshot:** Change Set preview — S3 bucket marked as "Add", other resources unchanged
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/40c0db3f-b36c-4a5e-b794-e468299b41c9" />
 
-![changeset-s3](screenshots/03-changeset-s3.png)
+
 
 5. Clicked **Update stack** → waited for `UPDATE_COMPLETE`
 6. Verified the bucket appeared in the **Resources** tab with a randomly assigned name (avoids naming conflicts)
 
 > **Screenshot:** Resources tab — S3 bucket now listed alongside VPC resources
 
-![resources-s3](screenshots/04-resources-s3.png)
 
 ---
 
