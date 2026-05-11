@@ -185,8 +185,7 @@ aws cloudformation describe-stack-resources \
 | Other resources | IN_SYNC |
 
 > **Screenshot:** Terminal - drift detection table showing MODIFIED for Security Group
-
-![drift-detected](screenshots/04-drift-detected.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/693fb4ca-8f74-432f-a7e1-8fddb3ece322" />
 
 ---
 
@@ -199,6 +198,8 @@ aws cloudformation delete-stack --stack-name myStack
 # StackStatus: DELETE_FAILED
 # Reason: bucket contains objects → CloudFormation refuses to delete it
 ```
+> **Screenshot:** Terminal - Bucket DELETE_FAILED
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/a921172d-47ff-47fd-a15b-d0cccd40c61e" />
 
 ### Solution - `--retain-resources` flag
 
@@ -219,8 +220,9 @@ Stack status: **`DELETE_COMPLETE`** ✅
 S3 bucket and its contents: **preserved** ✅
 
 > **Screenshot:** Terminal - `DELETE_COMPLETE` status after retain-resources solution
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/75bd1d39-404e-4379-ba80-592cafa7de37" />
 
-![delete-complete](screenshots/05-delete-complete.png)
+
 
 ---
 
