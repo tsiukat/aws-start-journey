@@ -75,7 +75,8 @@ Returns only **2 instances** — ERPSystem + development.
 
 > **Screenshot:** Terminal — filtered output showing 2 development instances with tags
 
-![filtered-instances](screenshots/01-filtered-instances.png)
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/35fd5d05-124b-49f8-80a2-248dee48b0df" />
+
 
 ### Batch update Version tag with a shell script
 
@@ -121,8 +122,9 @@ Script scans **every AWS region**, identifies matching instances, and stops them
 Verified in EC2 Console: 2 instances stopped → then restarted.
 
 > **Screenshot:** EC2 Console → 2 development instances in **Stopped** state after stopinator ran
-
-![instances-stopped](screenshots/03-instances-stopped.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/8298202a-90a4-49df-9af4-ae99320279a1" />
+> **Screenshot:** EC2 Console → 2 development instances in **Initializing** state after stopinator ran
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/6babc961-ddd8-4e1c-b93b-b79084a84e94" />
 
 ---
 
@@ -154,8 +156,10 @@ Instances terminated.
 ```
 
 > **Screenshot:** Terminal — script output showing which instances were checked and terminated
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/d6010749-9d88-41b0-84ee-f95c7edac72d" />
 
-![terminate-output](screenshots/04-terminate-output.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d3e4349d-96fe-4465-9261-eebd6a8fe8a7" />
+
 
 ---
 
