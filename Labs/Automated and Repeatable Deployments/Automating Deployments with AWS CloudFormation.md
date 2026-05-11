@@ -135,6 +135,7 @@ Instance:
 
 
 > **Screenshot:** EC2 console - App Server in running state
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d295b0f2-5264-4033-8a79-bdc61ba34a43" />
 
 
 
@@ -148,11 +149,8 @@ CloudFormation tracks all resources it created, so deleting the stack removes ev
 2. Status changed to `DELETE_IN_PROGRESS`
 3. After a few minutes - stack disappeared from the list
 
-> **Screenshot:** CloudFormation console - stack no longer present after deletion
-
-![stack-deleted](screenshots/08-stack-deleted.png)
-
 Verified in respective consoles that the **S3 bucket**, **EC2 instance**, and **VPC** were all removed. ✅
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9a526fc2-f220-485a-b5c4-d077677604c1" />
 
 ---
 
