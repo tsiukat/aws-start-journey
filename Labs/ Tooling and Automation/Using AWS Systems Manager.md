@@ -30,8 +30,9 @@ In **Systems Manager → Fleet Manager → Account management → Set up invento
 After setup, navigated to **Node ID → Inventory tab** — listed all installed applications and OS metadata on the instance without logging into it.
 
 > **Screenshot:** Fleet Manager → Inventory tab — installed applications list
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1cca4616-f7a0-47e3-9c9b-4b2fcc01a81a" />
 
-![inventory-apps](screenshots/01-inventory-apps.png)
+
 
 ---
 
@@ -53,17 +54,18 @@ Selected the custom document:
 
 After ~2 minutes → **Overall status: Success**
 
-Opened `http://ServerIP` in browser → Widget Manufacturing Dashboard loaded. ✅
+> **Screenshot:** Opened `http://34.219.71.121` in browser → Widget Manufacturing Dashboard loaded. ✅
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/36788840-deb4-4163-8378-3f78647ebfae" />
 
 All done **without SSH** — Run Command pushed and executed the install script remotely via the SSM agent.
 
 > **Screenshot:** Systems Manager → Run Command → Overall status = **Success**
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/3c5dbd9e-9626-4698-88af-12f3c84a9d8a" />
 
-![run-command-success](screenshots/02-run-command-success.png)
 
 > **Screenshot:** Browser — Widget Manufacturing Dashboard installed and running
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/5d2e1cda-cb25-4db6-9a73-63dd737806c4" />
 
-![dashboard-installed](screenshots/03-dashboard-installed.png)
 
 ---
 
@@ -111,8 +113,8 @@ aws ec2 describe-instances
 ```
 
 > **Screenshot:** Session Manager — browser terminal with `ls /var/www/html` output
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/30a22784-e23e-4ac5-92a3-22a673de6e2a" />
 
-![session-manager-shell](screenshots/05-session-manager-shell.png)
 
 ---
 
