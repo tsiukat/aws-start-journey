@@ -19,7 +19,7 @@ Connected to the Linux Host EC2 instance via SSH:
 
 ## The Script
 
-Created `primes.py`:
+Created `prime_script.py`:
 
 ```python
 def is_prime(n):
@@ -47,7 +47,7 @@ print("\nResults saved to results.txt")
 **Run the script:**
 
 ```bash
-python3 primes.py
+python3 prime_script.py
 ```
 
 **Verify the output file:**
