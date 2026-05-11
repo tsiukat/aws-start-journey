@@ -40,6 +40,8 @@ sudo systemctl stop mariadb
 sudo yum -y remove mariadb-server
 # Expected: Complete!
 ```
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d101c9e2-5ac2-4bcb-bd29-8d1c8d2d2f20" />
+
 
 ### Step 2: Get CafeInstance ID (on CLI Host)
 
@@ -62,6 +64,10 @@ aws ec2 modify-instance-attribute \
 
 # Start the instance
 aws ec2 start-instances --instance-ids <InstanceId>
+
+> **Screenshot:** COnsole — new `t3.micro` instance `running`
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/bc3a341a-14bb-4427-8694-24388a9b3e0d" />
+
 
 # Verify new state and public IP
 aws ec2 describe-instances \
