@@ -56,8 +56,11 @@ watch -n 5 -d \
   --query 'StackResources[*].[ResourceType,ResourceStatus]' \
   --output table
 ```
+> **Screenshot:** Terminal - Check the status of each resource that is created by this stack
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/920a2ec5-53aa-4e16-a8e4-4a8768002476" />
 
-Resources created → then all **deleted**. Stack status: `ROLLBACK_COMPLETE`.
+> **Screenshot:** Terminal - Resources created → then all **deleted**. Stack status: `ROLLBACK_COMPLETE`.
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/2ec1da04-3807-4af9-932c-77281c88f583" />
 
 Analyzed the failure:
 ```bash
@@ -97,9 +100,7 @@ util.py[WARNING]: Failed running /var/lib/cloud/instance/scripts/part-001
 
 The UserData script tried to install `http` instead of `httpd` (the correct Apache package name on Amazon Linux). Because the script used `#!/bin/bash -e`, any failed command immediately stopped the whole script - so the WaitCondition never received its success signal.
 
-> **Screenshot:** Terminal - `cloud-init-output.log` showing the "No package http available" error
 
-![cloudinit-error](screenshots/01-cloudinit-error.png)
 
 ---
 
@@ -126,12 +127,16 @@ Stack status: **`CREATE_COMPLETE`** ✅
 Tested web server: opened `http://<PublicIP>` → "Hello from your web server!"
 
 > **Screenshot:** Terminal - stack resources all showing `CREATE_COMPLETE`
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ff8cbde2-05d8-4a4a-a29b-f09b525b36b8" />
 
-![stack-complete](screenshots/02-stack-complete.png)
+> **Screenshot:** Terminal - Public IP
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/eb310eeb-3870-4ea0-a939-d93571b9670b" />
+
 
 > **Screenshot:** Browser - web server responding with Hello message
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/1ad9ef4c-c8af-4d90-b7d9-dffd914a22af" />
 
-![webserver-hello](screenshots/03-webserver-hello.png)
+
 
 ---
 
