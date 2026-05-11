@@ -65,25 +65,25 @@ aws ec2 modify-instance-attribute \
 # Start the instance
 aws ec2 start-instances --instance-ids <InstanceId>
 
-> **Screenshot:** COnsole — new `t3.micro` instance `running`
-<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/bc3a341a-14bb-4427-8694-24388a9b3e0d" />
-
-
 # Verify new state and public IP
 aws ec2 describe-instances \
   --instance-ids <InstanceId> \
   --query "Reservations[*].Instances[*].[InstanceType,PublicDnsName,PublicIpAddress,State.Name]"
 ```
+> **Screenshot:** COnsole — new `t3.micro` instance `running`
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/7f1c93f7-a7c7-4597-a2bb-9d9f2140f4ac" />
+>
 
-Waited for `State.Name = running`, then opened `http://<new-public-DNS>/cafe` — website functional. ✅
+Waited for `State.Name = running`, then opened `http://ec2-18-236-96-66.us-west-2.compute.amazonaws.com/cafe` — website functional. ✅
 
 > **Screenshot:** Terminal — `describe-instances` output showing `t3.micro` + `running`
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/73510361-7e7a-4fa0-b344-78f8c6315708" />
 
-![instance-resized](screenshots/01-instance-resized.png)
 
 > **Screenshot:** Browser — Café website loading after resize
 
-![cafe-website-ok](screenshots/02-cafe-website-ok.png)
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/b40a362f-ba7a-4693-b0f5-3402a6a836c3" />
+
 
 ---
 
@@ -93,34 +93,40 @@ Waited for `State.Name = running`, then opened `http://<new-public-DNS>/cafe` �
 
 | Service | Configuration | Cost |
 |---|---|---|
-| EC2 | t3.small, On-Demand, Linux, 40 GB gp2 | ~$20.89/mo |
+| EC2 | t3.small, On-Demand, Linux, 40 GB gp2 |  $18.38/mo |
 | RDS | db.t3.micro, MariaDB, 20 GB gp2 | ~$14.71/mo |
-| **Total** | | **~$35.60/mo** |
+| **Total** | | **$33.09/mo** |
 
 ### After Optimization
 
 | Service | Configuration | Cost |
 |---|---|---|
-| EC2 | **t3.micro**, On-Demand, Linux, **20 GB gp2** | ~$10.47/mo |
-| RDS | db.t3.micro, MariaDB, 20 GB gp2 | ~$14.71/mo |
-| **Total** | | **~$25.18/mo** |
+| EC2 | **t3.micro**, On-Demand, Linux, **20 GB gp2** | $9.19/mo |
+| RDS | db.t3.micro, MariaDB, 20 GB gp2 | $14.71/mo |
+| **Total** | | **$23.90/mo** |
 
 ### Projected Savings
 
 ```
-Before:  $35.60 / month
-After:   $25.18 / month
+Before:  $33.09 / month
+After:   $23.90 / month
          ─────────────
-Savings: $10.42 / month  (~$125 / year)
+Savings: $9.19 / month  (~$110.28 / year)
 ```
 
 > **Screenshot:** AWS Pricing Calculator — estimate before optimization
+>
+> https://calculator.aws/#/estimate?id=11aaa928ae34e62ae9c235135ef1533550e40907
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/c1b8fb70-34bb-49e0-8337-edee2cc08b70" />
 
-![calculator-before](screenshots/03-calculator-before.png)
 
 > **Screenshot:** AWS Pricing Calculator — estimate after optimization showing lower total
+> 
+> https://calculator.aws/#/estimate?id=f01b257ec12912f65634695069519dc680e4a55c
+> <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/125930a7-d1fb-41be-9d79-666172f40fdc" />
 
-![calculator-after](screenshots/04-calculator-after.png)
+
+
 
 ---
 
