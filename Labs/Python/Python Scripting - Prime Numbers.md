@@ -51,6 +51,9 @@ with open("results.txt", "w") as f:
 
 print("\nResults saved to results.txt")
 ```
+> **Screenshot:** Terminal - script output
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/5da12ec6-2f91-4267-9f2b-c2a70f4d779b" />
+
 
 **Run the script:**
 
@@ -79,8 +82,8 @@ Total count: 53
 ```
 
 > **Screenshot:** Terminal - script output + `cat results.txt` confirming file created
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/c397b2e1-f267-4d2a-8c89-e2048413a728" />
 
-![script-output](screenshots/01-script-output.png)
 
 ---
 
