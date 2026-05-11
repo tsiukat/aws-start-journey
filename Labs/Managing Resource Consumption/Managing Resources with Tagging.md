@@ -98,8 +98,8 @@ aws ec2 create-tags --resources $ids --tags 'Key=Version,Value=1.1'
 Verified: development instances now show `Version: 1.1`, production instances unchanged at `1.0`.
 
 > **Screenshot:** Terminal — all ERPSystem instances showing updated Version values
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d8e9156c-9976-4c29-bfc8-d27caeb360e3" />
 
-![version-updated](screenshots/02-version-updated.png)
 
 ---
 
@@ -134,7 +134,7 @@ Verified in EC2 Console: 2 instances stopped → then restarted.
 
 ### Setup
 
-Removed the `Environment` tag from 2 instances in the EC2 Console → Tags tab → Edit → delete `Environment` → Save.
+Removed the `Environment` tag from the instance in the EC2 Console → Tags tab → Edit → delete `Environment` → Save.
 
 ### Run the terminate-instances.php script
 
@@ -158,6 +158,7 @@ Instances terminated.
 > **Screenshot:** Terminal — script output showing which instances were checked and terminated
 <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/d6010749-9d88-41b0-84ee-f95c7edac72d" />
 
+> **Screenshot:** Console — instace is terminated after script
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d3e4349d-96fe-4465-9261-eebd6a8fe8a7" />
 
 
