@@ -19,8 +19,16 @@ Connected to the Linux Host EC2 instance via SSH:
 
 ## The Script
 
-Created `prime_script.py`:
+Created `prime_script.py`
+```bash
+touch prime_script.py
+```
+Opened it in a redactor:
+```bash
+nano prime_script.py
+```
 
+Code:
 ```python
 def is_prime(n):
     if n < 2:
