@@ -17,13 +17,6 @@ Write a Python 3 script on a Linux EC2 instance that:
 
 Connected to the Linux Host EC2 instance via SSH:
 
-```bash
-chmod 400 labsuser.pem
-ssh -i labsuser.pem ec2-user@<public-ip>
-```
-
----
-
 ## The Script
 
 Created `primes.py`:
