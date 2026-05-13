@@ -7,7 +7,7 @@
 
 ## Business Context
 
-Deploying infrastructure manually is error-prone and hard to repeat consistently. **AWS CloudFormation** solves this by defining the entire infrastructure as code in a YAML/JSON template, which can be version-controlled, reviewed, and deployed automatically - .
+Deploying infrastructure manually is error-prone and hard to repeat consistently. **AWS CloudFormation** solves this by defining the entire infrastructure as code in a YAML/JSON template, which can be version-controlled, reviewed, and deployed automatically - even on a schedule.
 
 This lab covers the full lifecycle of a CloudFormation stack:
 
