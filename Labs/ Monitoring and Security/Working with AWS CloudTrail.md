@@ -13,6 +13,7 @@ The café website was hacked. My role (as Sofía): identify who made unauthorize
 
 **Investigation flow:**
 
+
 ```
 Website hacked → CloudTrail logs → grep + AWS CLI → Athena SQL queries
                                                             ↓
@@ -32,7 +33,6 @@ Added SSH inbound rule (port 22, My IP only) to the Web Server security group as
 
 > **Screenshot:** EC2 → Security Group → Inbound rules - SSH port 22, source = My IP
 <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/9bc25052-8046-407f-85a8-506dca56f262" />
-
 
 
 ---
@@ -68,7 +68,7 @@ aws s3 cp s3://monitoring####/ . --recursive
 gunzip *.gz
 ```
 
-### grep analysis
+### analysis
 
 ```bash
 # Find events by source IP (web server's own IP)
