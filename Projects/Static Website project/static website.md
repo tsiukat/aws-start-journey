@@ -33,7 +33,7 @@ Management Console
    - Enable pop-ups in your browser
    - Try again
 4. Arrange the AWS Console and these instructions side by side for easier setup.
-<img width="1373" height="774" alt="image" src="https://github.com/user-attachments/assets/ab3d9555-9003-44a4-b96f-39185376936d" />
+<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/ab3d9555-9003-44a4-b96f-39185376936d" />
 
 
 
@@ -43,7 +43,7 @@ Management Console
 1. Open the S3 console: https://console.aws.amazon.com/s3/
 2. Click **Create bucket**.
 
-<img width="1362" height="764" alt="image" src="https://github.com/user-attachments/assets/e523b0b3-309d-4d70-a1ed-bf9d47f87276" />
+<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/e523b0b3-309d-4d70-a1ed-bf9d47f87276" />
 
 
 3. Enter a bucket name: `static-website-icecream-shop`.
