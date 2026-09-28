@@ -3,7 +3,7 @@
 <img width="600" height="350" alt="Screenshot 2026-03-19 at 13 51 35" src="https://github.com/user-attachments/assets/95315ecd-1735-430c-80ee-e68720097dc4" />
 
 
-We are a team of five building a modern, cloud-based web solution for a local ice cream shop.
+We are a team of five building a modern, cloud-based web solution for a local ice cream shop
 
 Our goal is to solve operational challenges—such as order mix-ups and high booking demand—by moving the business to the AWS cloud.
 
